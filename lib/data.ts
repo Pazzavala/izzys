@@ -1,0 +1,99 @@
+export const navLinks = [
+  {
+    name: 'Home',
+  },
+  {
+    name: 'About',
+  },
+  {
+    name: 'Services',
+  },
+  {
+    name: 'Contact',
+  },
+];
+
+export const contactInfo = [
+  {
+    email: 'landscaping.izzy@gmail.com',
+  },
+];
+
+export const socials = [
+  {
+    social: 'Facebook',
+    name: 'Izzys Landscaping & Construction LLC',
+    link: 'https://www.facebook.com/IzzysLandscaping',
+    icon: 'FbIcon',
+  },
+  {
+    social: 'Instagram',
+    name: 'izzys_landscaping',
+    link: 'https://www.instagram.com/izzys_landscaping/?igsh=NTc4MTIwNjQ2YQ%3D%3D#',
+    icon: 'IgIcon',
+  },
+  {
+    social: 'Email',
+    name: 'Izzys Landscaping & Construction LLC',
+    link: 'landscaping.izzy@gmail.com',
+    icon: 'EmIcon',
+  },
+  {
+    social: 'Phone Number',
+    name: 'Izzys Landscaping & Construction LLC Number',
+    link: '(612) 978-9411',
+    icon: 'PhIcon',
+  },
+];
+
+export const services = [
+  {
+    name: 'Landscaping',
+  },
+  {
+    name: 'Hardscaping',
+  },
+  {
+    name: 'Retaining Walls',
+  },
+  {
+    name: 'Irrigation',
+  },
+  {
+    name: 'Lighting Solutions',
+  },
+  {
+    name: 'Drainage',
+  },
+];
+
+export const testimonials = [
+  {
+    clientName: 'Luke C.',
+    location: 'Minnesota',
+    review:
+      "I hired Izzy's Landscaping & Construction to build a retaining wall and add fill beneath a new garage. Izzy and team did a thorough job with clear attention to detail. The space is solidly constructed with water drainage and durability in mind. He is easy to work with, prompt, available, and has a great team. I highly recommend Izzy to anyone looking for high quality at a reasonable price with zero hassle.",
+    rating: 5,
+  },
+  {
+    clientName: 'K. Buchberger',
+    location: 'Minnesota',
+    review:
+      "We just had the best experience with Izzy's! When we were first looking for quotes he was incredibly responsive, showed up right when he said he would, and worked with us in answering all of our questions to figure out a design in our budget. Then he and his crew showed up to do the project, and absolutely blew us away with their hard work and skill. We were gone on vacation when they finished and he was STILL super quick to respond to all our (my) annoying emails. We highly recommend Izzy and his crew!",
+    rating: 5,
+  },
+  {
+    clientName: 'Dr. Josey P.',
+    location: 'Minnesota',
+    review:
+      'Outstanding customer service, professionalism, work ethic, and outcomes. This company exceeded my expectations. Prices were very reasonable. I would definitely hire Izzys Landscaping for future work. Highly recommended!',
+    rating: 5,
+  },
+  {
+    clientName: 'Tim W.',
+    location: 'Minnesota',
+    review:
+      ' I met the owner and he did a fantastic job was super easy to work with and very fair with pricing',
+    rating: 5,
+  },
+];
