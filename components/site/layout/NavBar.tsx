@@ -5,7 +5,7 @@ export default function NavBar() {
   return (
     <div>
       {navLinks.map((navLink) => (
-        <p>{navLink.name}</p>
+        <p key={navLink.name}>{navLink.name}</p>
       ))}
     </div>
   );
