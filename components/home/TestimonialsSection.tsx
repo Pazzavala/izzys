@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default function TestimonialsSection() {
-  return <div>TestimonialsSection</div>;
+  return <section className='bg-amber-400'>TestimonialsSection</section>;
 }

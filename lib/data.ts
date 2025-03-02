@@ -19,51 +19,60 @@ export const contactInfo = [
   },
 ];
 
+import { FaSquareInstagram, FaFacebook, FaPhone } from 'react-icons/fa6';
+import { MdEmail, MdFacebook, MdLocalPhone } from 'react-icons/md';
+
 export const socials = [
   {
     social: 'Facebook',
     name: 'Izzys Landscaping & Construction LLC',
     link: 'https://www.facebook.com/IzzysLandscaping',
-    icon: 'FbIcon',
+    icon: MdFacebook,
   },
   {
     social: 'Instagram',
     name: 'izzys_landscaping',
     link: 'https://www.instagram.com/izzys_landscaping/?igsh=NTc4MTIwNjQ2YQ%3D%3D#',
-    icon: 'IgIcon',
+    icon: FaSquareInstagram,
   },
   {
     social: 'Email',
     name: 'Izzys Landscaping & Construction LLC',
     link: 'landscaping.izzy@gmail.com',
-    icon: 'EmIcon',
+    icon: MdEmail,
   },
   {
     social: 'Phone Number',
     name: 'Izzys Landscaping & Construction LLC Number',
     link: '(612) 978-9411',
-    icon: 'PhIcon',
+    icon: MdLocalPhone,
   },
 ];
 
 export const services = [
   {
     name: 'Landscaping',
+    url: '/assets/LandscapingExample.png',
   },
   {
     name: 'Hardscaping',
+    url: '/assets/HardscapingExample.png',
   },
   {
     name: 'Retaining Walls',
+    url: '/assets/RetainingWallsExample.png',
   },
   {
     name: 'Irrigation',
+    url: '/assets/IrrigationExample.png',
   },
   {
     name: 'Lighting Solutions',
+    url: '/assets/LightingSolutionsExample.png',
   },
   {
     name: 'Drainage',
+    url: '/assets/PatioExample.png',
   },
 ];
 
