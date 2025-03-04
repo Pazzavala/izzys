@@ -7,7 +7,6 @@ import Button from '@/components/ui/Button';
 export default function NavBar() {
   return (
     <nav className='bg-white text-gray-700 shadow-md'>
-      {/* either inclide container or remove  */}
       <div className='mx-auto px-4 sm:px-6 xl:px-32'>
         <div className='flex flex-col sm:flex-row justify-between items-center py-10'>
           {/* Logo */}

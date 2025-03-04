@@ -2,10 +2,10 @@ import React from 'react';
 
 export default function AboutSection() {
   return (
-    <section className='w-full py-56 bg-[#FF8106] flex flex-col items-center text-white text-center'>
+    <section className='w-full min-h-[50vh] md:min-h-[55vh] 3xl:min-h-[65vh] bg-[#FF8106] flex flex-col items-center justify-center text-white text-center'>
       <div className='container max-w-5xl px-6 md:px-12'>
         {/* Section Title */}
-        <h2 className='text-3xl sm:text-4xl font-bodoni_moda font-bold mb-20'>
+        <h2 className='text-3xl sm:text-4xl font-bodoni_moda font-bold mb-12'>
           Why Choose Us
         </h2>
 
