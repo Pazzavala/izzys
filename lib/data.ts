@@ -24,26 +24,22 @@ import { MdEmail, MdFacebook, MdLocalPhone } from 'react-icons/md';
 
 export const socials = [
   {
-    social: 'Facebook',
-    name: 'Izzys Landscaping & Construction LLC',
+    name: 'Facebook',
     link: 'https://www.facebook.com/IzzysLandscaping',
     icon: MdFacebook,
   },
   {
-    social: 'Instagram',
-    name: 'izzys_landscaping',
+    name: 'Instagram',
     link: 'https://www.instagram.com/izzys_landscaping/?igsh=NTc4MTIwNjQ2YQ%3D%3D#',
     icon: FaSquareInstagram,
   },
   {
-    social: 'Email',
-    name: 'Izzys Landscaping & Construction LLC',
+    name: 'Email',
     link: 'landscaping.izzy@gmail.com',
     icon: MdEmail,
   },
   {
-    social: 'Phone Number',
-    name: 'Izzys Landscaping & Construction LLC Number',
+    name: 'Phone Number',
     link: '(612) 978-9411',
     icon: MdLocalPhone,
   },

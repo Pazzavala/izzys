@@ -46,7 +46,7 @@ export default function MobileMenu() {
             <div className='flex flex-col gap-4'>
               {navLinks.map((navLink) => (
                 <a
-                  key={navLink.name}
+                  key={`${navLink.name} mobile`}
                   href={`/${navLink.name.toLowerCase()}`}
                   className='block py-2 hover:text-green-600 transition-colors duration-200'
                   onClick={() => setIsOpen(false)} // Close menu on link click
