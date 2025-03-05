@@ -25,24 +25,24 @@ import { MdEmail, MdFacebook, MdLocalPhone } from 'react-icons/md';
 export const socials = [
   {
     name: 'Facebook',
-    link: 'https://www.facebook.com/IzzysLandscaping',
+    url: 'https://www.facebook.com/IzzysLandscaping',
     icon: MdFacebook,
   },
   {
     name: 'Instagram',
-    link: 'https://www.instagram.com/izzys_landscaping/?igsh=NTc4MTIwNjQ2YQ%3D%3D#',
+    url: 'https://www.instagram.com/izzys_landscaping/?igsh=NTc4MTIwNjQ2YQ%3D%3D#',
     icon: FaSquareInstagram,
   },
-  {
-    name: 'Email',
-    link: 'landscaping.izzy@gmail.com',
-    icon: MdEmail,
-  },
-  {
-    name: 'Phone Number',
-    link: '(612) 978-9411',
-    icon: MdLocalPhone,
-  },
+  // {
+  //   name: 'Email',
+  //   url: 'landscaping.izzy@gmail.com',
+  //   icon: MdEmail,
+  // },
+  // {
+  //   name: 'Phone Number',
+  //   url: '(612) 978-9411',
+  //   icon: MdLocalPhone,
+  // },
 ];
 
 export const services = [

@@ -14,7 +14,7 @@ export default function HeroSection() {
       {/* Content container */}
       <div className='relative flex flex-col items-center z-10 container mx-auto max-w-4xl text-center text-white px-6'>
         {/* Logo */}
-        <div className='flex justify-center mb-6'>
+        <div className='flex justify-center'>
           <Image
             src={IzzysLogo}
             alt='Izzys Landscaping and Construction'
@@ -32,7 +32,7 @@ export default function HeroSection() {
         <Button text='Schedule A Free Estimate' />
 
         {/* Subheading */}
-        <h3 className='text-lg sm:text-xl md:text-4xl mt-14 font-bodoni_moda font-bold'>
+        <h3 className='text-lg sm:text-xl md:text-4xl mt-14 font-normal'>
           Trusted Minnesota Landscaper For 20+ Years
         </h3>
       </div>

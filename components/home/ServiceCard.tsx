@@ -8,11 +8,11 @@ interface ServiceCardProps {
 export default function ServiceCard({ name, url }: Readonly<ServiceCardProps>) {
   return (
     <article
-      className='group w-full h-64 bg-cover bg-center relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl hover:scale-105 transition duration-300'
+      className='group w-full h-72 bg-cover bg-center relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl hover:scale-105 transition duration-300'
       style={{ backgroundImage: `url(${url})` }}
     >
       {/* Dark overlay */}
-      <div className='absolute inset-0 bg-black/45 group-hover:bg-black/50  transition duration-300' />
+      <div className='absolute inset-0 bg-black/50 group-hover:bg-black/55  transition duration-300' />
 
       {/* Content Container */}
       <div className='relative z-10 flex items-center justify-center h-full'>

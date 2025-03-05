@@ -6,21 +6,23 @@ import ServiceCard from './ServiceCard';
 export default function ServicesSection() {
   return (
     <section className='bg-white py-28'>
-      <div className='container mx-auto px-8 max-w-6xl'>
+      <div className='container mx-auto px-8 max-w-7xl'>
         {/* Header Section */}
-        <div className='flex gap-3 flex-col md:flex-row justify-between items-center mb-8'>
-          <div className='text-gray-800 flex gap-3 flex-col justify-center items-center md:items-start'>
-            <h2 className='text-3xl sm:text-4xl font-bold'>Our Services</h2>
-            <p className='text-gray-600 text-base sm:text-lg font-medium'>
-              Quality Landscaping at a Price You Can Trust!
+        <div className='flex gap-3 flex-col md:flex-row justify-center items-center mb-8'>
+          <div className='max-w-4xl text-gray-800 flex gap-3 flex-col justify-center items-center'>
+            <h2 className='text-3xl sm:text-4xl font-bold font-bodoni_moda'>
+              Our Services
+            </h2>
+            <p className='text-center text-gray-600 text-base sm:text-lg font-medium'>
+              Transform your outdoor space with our expert landscaping services,
+              including design, installation, and maintenance for stunning,
+              sustainable landscapes.
             </p>
           </div>
-
-          <Button text='See More Services' />
         </div>
 
         {/* Services Grid */}
-        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-5'>
           {services.map((service) => (
             <ServiceCard
               key={service.name}
@@ -28,6 +30,11 @@ export default function ServicesSection() {
               url={service.url}
             />
           ))}
+        </div>
+
+        {/* See all Services Section */}
+        <div className='h-24 flex items-center justify-center'>
+          <Button text='See More Services' />
         </div>
       </div>
     </section>

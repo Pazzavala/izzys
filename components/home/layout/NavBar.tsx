@@ -7,21 +7,21 @@ import Button from '@/components/ui/Button';
 export default function NavBar() {
   return (
     <nav className='bg-white text-gray-700 shadow-md'>
-      <div className='mx-auto px-4 sm:px-6 xl:px-32'>
-        <div className='flex flex-col sm:flex-row justify-between items-center py-10'>
+      <div className='mx-auto px-4 sm:px-0 xl:px-10'>
+        <div className='flex flex-col sm:flex-row justify-between items-center py-5'>
           {/* Logo */}
           <div className='mb-4 sm:mb-0'>
             <Image
               src={IzzysLogo}
               alt='Izzys Landscaping and Construction'
-              width={250}
+              width={200}
               height={100}
-              className='w-48 sm:w-64'
+              className='w-48 sm:w-52'
             />
           </div>
 
           {/* Navigation Links */}
-          <div className='hidden sm:flex flex-wrap justify-center gap-4 sm:gap-6 mb-4 sm:mb-0'>
+          <div className='hidden sm:flex flex-wrap justify-end items-center gap-4 sm:gap-16 mb-4 sm:mb-0'>
             {navLinks.map((navLink) => (
               <a
                 key={navLink.name}
