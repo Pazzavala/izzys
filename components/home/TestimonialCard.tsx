@@ -55,7 +55,7 @@ export default function TestimonialCard({
         mx-auto 
         p-12 
         m-10 
-        bg-gray-200 
+        bg-gray-100 
         text-gray-800 
         rounded-xl
         transition-all 

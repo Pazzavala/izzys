@@ -1,5 +1,6 @@
+'use client';
 import React from 'react';
-import Button from '../ui/Button';
+import ContactForm from './ContactForm'; // Import the ContactForm component
 import Image from 'next/image';
 import TeamImage from '@/public/assets/team.jpg';
 
@@ -13,20 +14,17 @@ export default function ContactSection() {
       <div className='absolute inset-0 bg-black/50 backdrop-blur-xs' />
 
       {/* Content Container */}
-      <div className='relative container flex flex-col-reverse lg:flex-row gap-10 md:gap-20 p-10 z-10 items-center justify-center w-full mx-auto'>
-        {/* Text and Button Section */}
-        <div className='flex flex-col gap-8 text-center md:text-left max-w-md'>
+      <div className='relative container mx-auto px-6 md:px-12 flex flex-col-reverse lg:flex-row gap-10 md:gap-20 z-10 items-center justify-center'>
+        {/* Text and Form Section */}
+        <div className='flex flex-col gap-8 text-center md:text-left '>
           <h3 className='text-2xl sm:text-3xl md:text-4xl font-bodoni_moda font-bold text-white'>
             Ready To Transform Your Outdoor Space?
           </h3>
-          <Button
-            text='Contact Us Today For a Free Consultation!'
-            // className='w-full md:w-auto bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors'
-          />
+          <ContactForm /> {/* Replace the Button with the ContactForm */}
         </div>
 
         {/* Image Section */}
-        <div className='w-full max-w-md md:max-w-lg lg:max-w-xl h-auto rounded-xl overflow-hidden shadow-lg'>
+        <div className='w-full md:max-w-lg lg:max-w-xl h-auto rounded-xl overflow-hidden shadow-lg'>
           <Image
             src={TeamImage}
             alt="Izzy's Team"

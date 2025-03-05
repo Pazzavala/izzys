@@ -1,7 +1,7 @@
 import React from 'react';
 import { navLinks, socials } from '@/lib/data';
 import Image from 'next/image';
-import IzzysLogo from '@/public/assets/izzy_banner.jpg';
+import IzzysLogo from '@/public/assets/izzy_banner.png';
 import Button from '@/components/ui/Button';
 
 export default function NavBar() {
@@ -40,12 +40,12 @@ export default function NavBar() {
               {socials.map((social) => (
                 <a
                   key={social.name}
-                  href={social.link}
+                  href={social.url}
                   target='_blank'
                   rel='noopener noreferrer'
                   className='text-gray-700 hover:text-[#FF8106] transition-colors duration-200'
                 >
-                  <social.icon className='w-6 h-6' />
+                  <social.icon className='w-6 h-6 rounded-full' />
                 </a>
               ))}
             </div>

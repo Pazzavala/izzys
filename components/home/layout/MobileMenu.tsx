@@ -5,7 +5,7 @@ import { FaBars, FaTimes } from 'react-icons/fa'; // Import hamburger and close 
 import { navLinks, socials } from '@/lib/data'; // Import your data
 import Button from '@/components/ui/Button'; // Import your button component
 import Image from 'next/image';
-import IzzysLogo from '@/public/assets/izzy_banner.jpg';
+import IzzysLogo from '@/public/assets/izzy_banner.png';
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false); // State to manage menu open/close
@@ -48,7 +48,7 @@ export default function MobileMenu() {
                 <a
                   key={`${navLink.name} mobile`}
                   href={`/${navLink.name.toLowerCase()}`}
-                  className='block py-2 hover:text-green-600 transition-colors duration-200'
+                  className='block py-2 hover:text-[#FF8106] transition-colors duration-200'
                   onClick={() => setIsOpen(false)} // Close menu on link click
                 >
                   {navLink.name}
@@ -61,7 +61,7 @@ export default function MobileMenu() {
               {socials.map((social) => (
                 <a
                   key={social.name}
-                  href={social.link}
+                  href={social.url}
                   target='_blank'
                   rel='noopener noreferrer'
                   className='text-gray-700 hover:text-green-600 transition-colors duration-200'

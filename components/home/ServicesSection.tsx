@@ -5,12 +5,19 @@ import ServiceCard from './ServiceCard';
 
 export default function ServicesSection() {
   return (
-    <section className='bg-white py-28'>
-      <div className='container mx-auto px-8 max-w-7xl'>
+    <section className='w-full py-20 md:py-28 bg-white '>
+      <div className='container mx-auto px-6 md:px-12'>
         {/* Header Section */}
-        <div className='flex gap-3 flex-col md:flex-row justify-center items-center mb-8'>
+        <div className='flex gap-3 flex-col md:flex-row justify-center items-center mb-12'>
           <div className='max-w-4xl text-gray-800 flex gap-3 flex-col justify-center items-center'>
-            <h2 className='text-3xl sm:text-4xl font-bold font-bodoni_moda'>
+            <h2
+              className='
+              text-center 
+              text-3xl 
+              sm:text-4xl 
+              font-bold
+              font-caladea'
+            >
               Our Services
             </h2>
             <p className='text-center text-gray-600 text-base sm:text-lg font-medium'>

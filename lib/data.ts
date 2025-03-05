@@ -13,36 +13,61 @@ export const navLinks = [
   },
 ];
 
-export const contactInfo = [
+// Target values for the metrics
+export const metrics = [
   {
-    email: 'landscaping.izzy@gmail.com',
+    metric: 'Projects Comepleted',
+    target: 150,
+    duration: 2,
+  },
+  {
+    metric: 'Customers Worked With',
+    target: 300,
+    duration: 2,
+  },
+  {
+    metric: 'Years of Experience',
+    target: 20,
+    duration: 4,
   },
 ];
 
-import { FaSquareInstagram, FaFacebook, FaPhone } from 'react-icons/fa6';
-import { MdEmail, MdFacebook, MdLocalPhone } from 'react-icons/md';
+import { FaInstagram, FaFacebook } from 'react-icons/fa6';
+
+import { IoMail, IoPhonePortrait, IoTime } from 'react-icons/io5';
+
+export const contactInfo = [
+  {
+    name: 'Time',
+    content: ' Monday - Friday: 7am - 3pm',
+    url: '',
+    icon: IoTime,
+  },
+  {
+    name: 'Email',
+    content: 'landscaping.izzy@gmail.com',
+    url: 'mailto:landscaping.izzy@gmail.com',
+    icon: IoMail,
+  },
+  {
+    name: 'Phone Number',
+    content: '(612) 978-9411',
+    url: 'tel:6129789411',
+    icon: IoPhonePortrait,
+  },
+];
 
 export const socials = [
   {
     name: 'Facebook',
     url: 'https://www.facebook.com/IzzysLandscaping',
-    icon: MdFacebook,
+    icon: FaFacebook,
   },
   {
     name: 'Instagram',
     url: 'https://www.instagram.com/izzys_landscaping/?igsh=NTc4MTIwNjQ2YQ%3D%3D#',
-    icon: FaSquareInstagram,
+    icon: FaInstagram,
   },
-  // {
-  //   name: 'Email',
-  //   url: 'landscaping.izzy@gmail.com',
-  //   icon: MdEmail,
-  // },
-  // {
-  //   name: 'Phone Number',
-  //   url: '(612) 978-9411',
-  //   icon: MdLocalPhone,
-  // },
 ];
 
 export const services = [
