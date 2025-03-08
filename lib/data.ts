@@ -83,10 +83,7 @@ export const services = [
     name: 'Retaining Walls',
     url: '/assets/RetainingWallsExample.png',
   },
-  {
-    name: 'Irrigation',
-    url: '/assets/IrrigationExample.png',
-  },
+
   {
     name: 'Lighting Solutions',
     url: '/assets/LightingSolutionsExample.png',
@@ -95,6 +92,70 @@ export const services = [
     name: 'Drainage',
     url: '/assets/PatioExample.png',
   },
+  // {
+  //   name: 'Graiding and Draining Correction',
+  //   url: '/assets/IrrigationExample.png',
+  // },
+  // {
+  //   name: 'Draintile French Drain',
+  //   url: '/assets/IrrigationExample.png',
+  // },
+  {
+    name: 'Paver Patios',
+    url: '/assets/PatioExample.png',
+  },
+  // {
+  //   name: 'Flagstone',
+  //   url: '/assets/PatioExample.png',
+  // },
+  // {
+  //   name: 'Bluestone',
+  //   url: '/assets/PatioExample.png',
+  // },
+  // {
+  //   name: 'Stone Walls',
+  //   url: '/assets/PatioExample.png',
+  // },
+  // {
+  //   name: 'Boulder Walls',
+  //   url: '/assets/PatioExample.png',
+  // },
+  // {
+  //   name: 'Firepits',
+  //   url: '/assets/PatioExample.png',
+  // },
+  // {
+  //   name: 'Outdoors Kitchen',
+  //   url: '/assets/PatioExample.png',
+  // },
+  // {
+  //   name: 'Outdoors Kitchen',
+  //   url: '/assets/PatioExample.png',
+  // },
+  // {
+  //   name: 'Plantin',
+  //   url: '/assets/PatioExample.png',
+  // },
+  // {
+  //   name: 'Mulch',
+  //   url: '/assets/PatioExample.png',
+  // },
+  // {
+  //   name: 'Rock',
+  //   url: '/assets/PatioExample.png',
+  // },
+  // {
+  //   name: 'Sod',
+  //   url: '/assets/PatioExample.png',
+  // },
+  // {
+  //   name: 'Edging',
+  //   url: '/assets/PatioExample.png',
+  // },
+  // {
+  //   name: 'Excavations',
+  //   url: '/assets/PatioExample.png',
+  // },
 ];
 
 export const testimonials = [

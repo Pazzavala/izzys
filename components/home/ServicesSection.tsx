@@ -9,7 +9,7 @@ export default function ServicesSection() {
       <div className='container mx-auto px-6 md:px-12'>
         {/* Header Section */}
         <div className='flex gap-3 flex-col md:flex-row justify-center items-center mb-12'>
-          <div className='max-w-4xl text-gray-800 flex gap-3 flex-col justify-center items-center'>
+          <div className='max-w-4xl text-[#FF8106] flex gap-3 flex-col justify-center items-center'>
             <h2
               className='
               text-center 
