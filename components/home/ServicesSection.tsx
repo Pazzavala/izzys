@@ -5,7 +5,7 @@ import ServiceCard from './ServiceCard';
 
 export default function ServicesSection() {
   return (
-    <section className='w-full py-20 md:py-28 bg-white '>
+    <section className='w-full py-20 md:py-28 bg-white'>
       <div className='container mx-auto px-6 md:px-12'>
         {/* Header Section */}
         <div className='flex gap-3 flex-col md:flex-row justify-center items-center mb-12'>
