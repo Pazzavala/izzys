@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import ContactForm from './ContactForm'; // Import the ContactForm component
+import ContactForm from './ContactForm';
 import Image from 'next/image';
 import TeamImage from '@/public/assets/team.jpg';
 
@@ -16,8 +16,8 @@ export default function ContactSection() {
       {/* Content Container */}
       <div className='relative container mx-auto px-6 md:px-12 flex flex-col-reverse lg:flex-row gap-10 md:gap-20 z-10 items-center justify-center'>
         {/* Text and Form Section */}
-        <div className='flex flex-col gap-8 text-center md:text-left '>
-          <h3 className='text-2xl sm:text-3xl md:text-4xl font-bodoni_moda font-bold text-white'>
+        <div className='flex flex-col gap-8 text-center lg:text-left items-center lg:items-start'>
+          <h3 className='text-2xl sm:text-3xl lg:text-4xl font-bodoni_moda font-bold text-white'>
             Ready To Transform Your Outdoor Space?
           </h3>
           <ContactForm /> {/* Replace the Button with the ContactForm */}
