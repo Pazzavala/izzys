@@ -15,9 +15,9 @@ export default function AboutPage() {
             Izzy&apos;s Landscaping is dedicated to creating beautiful,
             high-quality outdoor spaces across Minnesota. From lush gardens to
             durable hardscapes, we bring expert craftsmanship and attention to
-            detail. Whether it's a residential retreat or a commercial project,
-            we take pride in creating beautiful, sustainable landscapes that
-            stand the test of time. Let us turn your outdoor dreams into
+            detail. Whether it&apos;s a residential retreat or a commercial
+            project, we take pride in creating beautiful, sustainable landscapes
+            that stand the test of time. Let us turn your outdoor dreams into
             reality!
           </p>
         </div>
