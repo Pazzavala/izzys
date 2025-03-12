@@ -1,7 +1,7 @@
-import React from 'react';
-import Button from '../ui/Button';
-import { services } from '@/lib/data';
-import ServiceCard from './ServiceCard';
+import React from "react";
+import Button from "../ui/Button";
+import { services } from "@/lib/data";
+import ServiceCard from "./ServiceCard";
 
 export default function ServicesSection() {
   return (

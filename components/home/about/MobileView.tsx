@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import AboutUsHero1 from '@/public/assets/image2.png';
-import AboutUsHero2 from '@/public/assets/image3.png';
-import AboutUsHero3 from '@/public/assets/image4.png';
+import Image from "next/image";
+import AboutUsHero1 from "@/public/assets/izzy_banner.jpg";
+import AboutUsHero2 from "@/public/assets/izzy_banner.jpg";
+import AboutUsHero3 from "@/public/assets/izzy_banner.jpg";
 
 export default function MobileView() {
   return (

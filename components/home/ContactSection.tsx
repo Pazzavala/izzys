@@ -1,17 +1,17 @@
-'use client';
-import React from 'react';
-import ContactForm from './ContactForm';
-import Image from 'next/image';
-import TeamImage from '@/public/assets/team.jpg';
+"use client";
+import React from "react";
+import ContactForm from "./ContactForm";
+import Image from "next/image";
+import TeamImage from "@/public/assets/team.jpg";
 
 export default function ContactSection() {
   return (
     <section
       className='w-full min-h-[65vh] md:min-h-[70vh] xl:min-h-[80vh] flex items-center justify-center py-16 px-4 bg-cover bg-center relative'
-      style={{ backgroundImage: `url(/assets/image1.png)` }}
+      style={{ backgroundImage: `url(/assets/IZZY20.webp)` }}
     >
       {/* Overlay */}
-      <div className='absolute inset-0 bg-black/50 backdrop-blur-xs' />
+      <div className='absolute inset-0 bg-black/60 backdrop-blur-xs' />
 
       {/* Content Container */}
       <div className='relative container mx-auto px-6 md:px-12 flex flex-col-reverse lg:flex-row gap-10 md:gap-20 z-10 items-center justify-center'>

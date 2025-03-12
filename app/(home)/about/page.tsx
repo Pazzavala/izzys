@@ -1,9 +1,6 @@
-import Image from 'next/image';
-import AboutUsHero1 from '@/public/assets/image2.png';
-import AboutUsHero2 from '@/public/assets/image3.png';
-import AboutUsHero3 from '@/public/assets/image4.png';
-import MobileView from '@/components/home/about/MobileView';
-import WindowView from '@/components/home/about/WindowView';
+
+import MobileView from "@/components/home/about/MobileView";
+import WindowView from "@/components/home/about/WindowView";
 
 export default function AboutPage() {
   return (

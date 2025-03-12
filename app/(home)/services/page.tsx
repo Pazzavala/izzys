@@ -1,8 +1,8 @@
-import React from 'react';
-import Image from 'next/image';
-import AboutUsHero1 from '@/public/assets/image2.png';
-import AboutUsHero3 from '@/public/assets/image4.png';
-import Gallery from '@/components/ui/Gallery';
+import React from "react";
+import Image from "next/image";
+import AboutUsHero1 from "@/public/assets/izzy_banner.jpg";
+import AboutUsHero3 from "@/public/assets/izzy_banner.jpg";
+import Gallery from "@/components/ui/Gallery";
 
 export default function LandscapingServicesPage() {
   return (
