@@ -188,3 +188,76 @@ export const testimonials = [
     rating: 5,
   },
 ];
+
+export const photos = [
+  {
+    src: '/assets/image.png',
+    width: 1512,
+    height: 1037,
+    key: '',
+    alt: '',
+  },
+  {
+    src: '/assets/image4.png',
+    width: 534,
+    height: 1117,
+    key: '',
+    alt: '',
+  },
+  {
+    src: '/assets/image1.png',
+    width: 1512,
+    height: 1025,
+    key: '',
+    alt: '',
+  },
+  {
+    src: '/assets/image2.png',
+    width: 534,
+    height: 1117,
+    key: '',
+    alt: '',
+  },
+  {
+    src: '/assets/image3.png',
+    width: 534,
+    height: 1117,
+    key: '',
+    alt: '',
+  },
+  {
+    src: '/assets/image4.png',
+    width: 534,
+    height: 1117,
+    key: '',
+    alt: '',
+  },
+  {
+    src: '/assets/image.png',
+    width: 1512,
+    height: 1037,
+    key: '',
+    alt: '',
+  },
+  {
+    src: '/assets/image1.png',
+    width: 1512,
+    height: 1025,
+    key: '',
+    alt: '',
+  },
+  {
+    src: '/assets/image2.png',
+    width: 534,
+    height: 1117,
+    key: '',
+    alt: '',
+  },
+  {
+    src: '/assets/image3.png',
+    width: 534,
+    height: 1117,
+    key: '',
+    alt: '',
+  },
+];
