@@ -1,7 +1,7 @@
-import IzzysLogo from '@/public/assets/izzy_banner.png';
-import React from 'react';
-import Image from 'next/image';
-import { contactInfo, navLinks, services, socials } from '@/lib/data';
+import IzzysLogo from "@/public/assets/izzy_banner.png";
+import React from "react";
+import Image from "next/image";
+import { contactInfo, navLinks, services, socials } from "@/lib/data";
 
 export default function Footer() {
   const shortServiceList = services.slice(0, 3);
@@ -51,7 +51,7 @@ export default function Footer() {
                   {navLinks.map((nav) => (
                     <a
                       key={nav.name}
-                      href={'nav.url'}
+                      href={"nav.url"}
                       className='text-sm hover:text-[#FF8106] transition-colors'
                     >
                       {nav.name}
@@ -140,8 +140,8 @@ export default function Footer() {
         {/* Footer Bottom */}
         <div className='mt-8 border-t border-gray-300 pt-6 text-center'>
           <p className='text-sm text-gray-500'>
-            &copy; {new Date().getFullYear()} Izzy's Landscaping. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Izzy&apos;s Landscaping. All
+            rights reserved.
           </p>
         </div>
       </div>

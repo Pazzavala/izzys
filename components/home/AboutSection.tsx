@@ -1,7 +1,7 @@
-'use client';
-import React from 'react';
-import Counter from '../ui/Counter';
-import { metrics } from '@/lib/data';
+"use client";
+import React from "react";
+import Counter from "../ui/Counter";
+import { metrics } from "@/lib/data";
 
 export default function AboutSection() {
   return (
@@ -23,7 +23,7 @@ export default function AboutSection() {
 
         {/* Description */}
         <p className='text-base sm:text-lg font-medium leading-loose mb-12'>
-          Izzy's Landscaping is dedicated to crafting high-quality outdoor
+          Izzy&apos;s Landscaping is dedicated to crafting high-quality outdoor
           spaces across Minnesota. From lush gardens to durable hardscapes, we
           bring expert craftsmanship and attention to detail. Whether it’s a
           residential retreat or a commercial project, we take pride in

@@ -15,9 +15,10 @@ export default function LandscapingServicesPage() {
           </h1>
           {/* Description Text */}
           <p className='text-center lg:text-left text-gray-600 text-sm lg:text-base font-light leading-relaxed tracking-wide mt-6 lg:mr-16'>
-            Izzy's Landscaping is dedicated to creating beautiful, high-quality
-            outdoor spaces across Minnesota. From lush gardens to durable
-            hardscapes, we bring expert craftsmanship and attention to detail.
+            Izzy&apos;s Landscaping is dedicated to creating beautiful,
+            high-quality outdoor spaces across Minnesota. From lush gardens to
+            durable hardscapes, we bring expert craftsmanship and attention to
+            detail.
           </p>
         </div>
 

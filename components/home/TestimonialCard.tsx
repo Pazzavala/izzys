@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { FaStar, FaEye } from 'react-icons/fa6';
-import Link from 'next/link';
+import React from "react";
+import { FaStar, FaEye } from "react-icons/fa6";
+import Link from "next/link";
 
 interface TestimonialsCardProps {
   id?: string;
@@ -20,7 +20,7 @@ export default function TestimonialCard({
   // Truncate review to a consistent length
   const truncateReview = (text: string, maxLength: number = 200) => {
     if (text.length <= maxLength) return text;
-    return text.slice(0, maxLength).trim() + '...';
+    return text.slice(0, maxLength).trim() + "...";
   };
 
   // Star Rendering Function
@@ -29,7 +29,7 @@ export default function TestimonialCard({
       <FaStar
         key={index}
         className={`
-          ${index < rating ? 'text-yellow-400' : 'text-gray-300'}
+          ${index < rating ? "text-yellow-400" : "text-gray-300"}
           w-5 h-5
         `}
       />
@@ -77,7 +77,7 @@ export default function TestimonialCard({
       {hasFullReview && (
         <Link
           href={`/reviews/${
-            id ?? clientName.toLowerCase().replace(/\s+/g, '-')
+            id ?? clientName.toLowerCase().replace(/\s+/g, "-")
           }`}
           className='
             absolute 

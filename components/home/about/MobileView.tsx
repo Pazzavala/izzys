@@ -46,7 +46,7 @@ export default function MobileView() {
 
       {/* Description Text */}
       <p className='max-w-4xl text-center text-gray-600 text-sm md:text-base font-light leading-relaxed tracking-wide mt-6'>
-        Izzy's Landscaping is dedicated to creating beautiful, high-quality
+        Izzy&apos;s Landscaping is dedicated to creating beautiful, high-quality
         outdoor spaces across Minnesota. From lush gardens to durable
         hardscapes, we bring expert craftsmanship and attention to detail.
         Whether it's a residential retreat or a commercial project, we take

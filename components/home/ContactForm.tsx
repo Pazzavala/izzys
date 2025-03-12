@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, FormEvent, useState } from "react";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
-  const handleChange = (e: any) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -15,11 +17,11 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Add your form submission logic here
-    console.log('Form Data Submitted:', formData);
-    alert('Thank you for contacting us! We will get back to you soon.');
+    console.log("Form Data Submitted:", formData);
+    alert("Thank you for contacting us! We will get back to you soon.");
   };
 
   return (
