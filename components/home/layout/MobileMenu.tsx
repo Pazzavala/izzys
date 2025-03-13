@@ -1,11 +1,12 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa'; // Import hamburger and close icons
-import { navLinks, socials } from '@/lib/data'; // Import your data
-import Button from '@/components/ui/Button'; // Import your button component
-import Image from 'next/image';
-import IzzysLogo from '@/public/assets/izzy_banner.png';
+import React, { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa"; // Import hamburger and close icons
+import { navLinks, socials } from "@/lib/data"; // Import your data
+import Button from "@/components/ui/Button"; // Import your button component
+import Image from "next/image";
+import IzzysLogo from "@/public/assets/izzy_banner.png";
+import Link from "next/link";
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false); // State to manage menu open/close
@@ -17,13 +18,15 @@ export default function MobileMenu() {
         <div className='flex justify-between items-center'>
           {/* Logo */}
           <div>
-            <Image
-              src={IzzysLogo}
-              alt='Izzys Landscaping and Construction'
-              width={150}
-              height={60}
-              className='w-32'
-            />
+            <Link href={"/"}>
+              <Image
+                src={IzzysLogo}
+                alt='Izzys Landscaping and Construction'
+                width={150}
+                height={60}
+                className='w-32'
+              />
+            </Link>
           </div>
 
           {/* Hamburger Icon */}
@@ -45,14 +48,18 @@ export default function MobileMenu() {
             {/* Navigation Links */}
             <div className='flex flex-col gap-4'>
               {navLinks.map((navLink) => (
-                <a
+                <Link
                   key={`${navLink.name} mobile`}
-                  href={`/${navLink.name.toLowerCase()}`}
+                  href={`/${
+                    navLink.name.toLowerCase() === "home"
+                      ? "/"
+                      : navLink.name.toLowerCase()
+                  }`}
                   className='block py-2 hover:text-[#FF8106] transition-colors duration-200'
                   onClick={() => setIsOpen(false)} // Close menu on link click
                 >
                   {navLink.name}
-                </a>
+                </Link>
               ))}
             </div>
 

@@ -2,6 +2,7 @@ import IzzysLogo from "@/public/assets/izzy_banner.png";
 import React from "react";
 import Image from "next/image";
 import { contactInfo, navLinks, services, socials } from "@/lib/data";
+import Link from "next/link";
 
 export default function Footer() {
   const shortServiceList = services.slice(0, 3);
@@ -12,13 +13,16 @@ export default function Footer() {
         <div className='flex flex-col md:flex-row'>
           {/* Logo and Contact Info */}
           <div className='flex flex-1 flex-col items-center md:items-start'>
-            <Image
-              src={IzzysLogo}
-              alt="Izzy's Logo"
-              width={270}
-              height={100}
-              className='object-contain mb-5 border border-orange-500 rounded-md'
-            />
+            <Link href={"/"}>
+              <Image
+                src={IzzysLogo}
+                alt="Izzy's Logo"
+                width={270}
+                height={100}
+                className='object-contain mb-5 border border-orange-500 rounded-md'
+              />
+            </Link>
+
             {/* Contact Info - Only visible in Mobile */}
             <div className='md:hidden text-left space-y-2 mb-6'>
               {contactInfo.map((contact) => (
@@ -48,14 +52,18 @@ export default function Footer() {
                   Quick Links
                 </h4>
                 <div className='grid grid-cols-1 gap-2'>
-                  {navLinks.map((nav) => (
-                    <a
-                      key={nav.name}
-                      href={"nav.url"}
+                  {navLinks.map((navLink) => (
+                    <Link
+                      key={navLink.name}
+                      href={`/${
+                        navLink.name.toLowerCase() === "home"
+                          ? "/"
+                          : navLink.name.toLowerCase()
+                      }`}
                       className='text-sm hover:text-[#FF8106] transition-colors'
                     >
-                      {nav.name}
-                    </a>
+                      {navLink.name}
+                    </Link>
                   ))}
                 </div>
               </div>

@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     <section
       className='w-full min-h-[65vh] md:min-h-[70vh] xl:min-h-[80vh] flex items-center justify-center py-16 px-4 bg-cover bg-center relative'
-      style={{ backgroundImage: "url('/assets/IZZY0.webp')" }}
+      style={{ backgroundImage: "url('/assets/Izzys/IZZY0.webp')" }}
     >
       {/* Dark overlay */}
       <div className='absolute inset-0 bg-black/50' />

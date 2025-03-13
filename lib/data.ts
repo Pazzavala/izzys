@@ -73,24 +73,24 @@ export const socials = [
 export const services = [
   {
     name: "Landscaping",
-    url: "/assets/IZZY1.webp",
+    url: "/assets/Izzys/IZZY1.webp",
   },
   {
     name: "Hardscaping",
-    url: "/assets/IZZY4.webp",
+    url: "/assets/Izzys/IZZY4.webp",
   },
   {
     name: "Retaining Walls",
-    url: "/assets/IZZY3.webp",
+    url: "/assets/Izzys/IZZY3.webp",
   },
 
   {
     name: "Lighting Solutions",
-    url: "/assets/IZZY9.webp",
+    url: "/assets/Izzys/IZZY9.webp",
   },
   {
     name: "Drainage",
-    url: "/assets/IZZY6.webp",
+    url: "/assets/Izzys/IZZY6.webp",
   },
   // {
   //   name: 'Graiding and Draining Correction',
@@ -102,7 +102,7 @@ export const services = [
   // },
   {
     name: "Paver Patios",
-    url: "/assets/IZZY5.webp",
+    url: "/assets/Izzys/IZZY5.webp",
   },
   // {
   //   name: 'Flagstone',
@@ -189,72 +189,72 @@ export const testimonials = [
   },
 ];
 
-export const photos = [
+export const servicesPhotos = [
   {
-    src: "/assets/IZZY1.webp",
+    src: "/assets/Izzys/IZZY1.webp",
     width: 2560,
     height: 1707,
     key: "",
     alt: "Image1",
   },
   {
-    src: "/assets/IZZY2.webp",
+    src: "/assets/Izzys/IZZY2.webp",
     width: 2560,
     height: 1707,
     key: "Image2",
     alt: "Image2",
   },
   {
-    src: "/assets/IZZY3.webp",
+    src: "/assets/Izzys/IZZY3.webp",
     width: 2560,
     height: 1707,
     key: "Image3",
     alt: "Image3",
   },
   {
-    src: "/assets/IZZY4.webp",
+    src: "/assets/Izzys/IZZY4.webp",
     width: 2560,
     height: 1707,
     key: "Image4",
     alt: "Image4",
   },
   {
-    src: "/assets/IZZY5.webp",
+    src: "/assets/Izzys/IZZY5.webp",
     width: 2560,
     height: 1707,
     key: "Image5",
     alt: "Image5",
   },
   {
-    src: "/assets/IZZY6.webp",
+    src: "/assets/Izzys/IZZY6.webp",
     width: 2560,
     height: 1707,
     key: "Image6",
     alt: "Image6",
   },
   {
-    src: "/assets/IZZY7.webp",
+    src: "/assets/Izzys/IZZY7.webp",
     width: 2560,
     height: 1707,
     key: "Image7",
     alt: "Image7",
   },
   // {
-  //   src: "/assets/IZZY8.webp",
+  //   src: "/assets/Izzys/IZZY8.webp",
   //   width: 1512,
   //   height: 1025,
   //   key: "",
   //   alt: "",
   // },
   // {
-  //   src: "/assets/IZZY9.webp",
+  //   src: "/assets/Izzys/IZZY9.webp",
   //   width: 534,
   //   height: 1117,
   //   key: "",
   //   alt: "",
   // },
   // {
-  //   src: "/assets/IZZY10.webp",
+  //   src: "/assets/Izzys/IZZY10.webp",
   //   width: 534,
   //   height: 1117,
   //   key: "",
