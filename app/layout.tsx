@@ -42,10 +42,10 @@ export default function RootLayout({
       // className={`${caladea.variable}`}
     >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${caladea.variable} ${bodoni_moda.variable} antialiased`}
+        className={`flex flex-col min-h-screen bg-white ${geistSans.variable} ${geistMono.variable} ${caladea.variable} ${bodoni_moda.variable} antialiased`}
       >
         <HeaderSection />
-        {children}
+        <main className='flex-grow bg-white'>{children}</main>
         <Footer />
       </body>
     </html>

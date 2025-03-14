@@ -8,13 +8,13 @@ export default function ContactSection() {
   return (
     <section
       className='w-full min-h-[65vh] md:min-h-[70vh] xl:min-h-[80vh] flex items-center justify-center py-16 px-4 bg-cover bg-center relative'
-      style={{ backgroundImage: `url(/assets/IZZY20.webp)` }}
+      style={{ backgroundImage: `url(/assets/Izzys/IZZY20.webp)` }}
     >
       {/* Overlay */}
       <div className='absolute inset-0 bg-black/60 backdrop-blur-xs' />
 
       {/* Content Container */}
-      <div className='relative container mx-auto px-6 md:px-12 flex flex-col-reverse lg:flex-row gap-10 md:gap-20 z-10 items-center justify-center'>
+      <div className='relative container mx-auto px-4 md:px-6 lg:px-8 flex flex-col-reverse lg:flex-row gap-10 md:gap-20 z-10 items-center justify-center'>
         {/* Text and Form Section */}
         <div className='flex flex-col gap-8 text-center lg:text-left items-center lg:items-start'>
           <h3 className='text-2xl sm:text-3xl lg:text-4xl font-bodoni_moda font-bold text-white'>
