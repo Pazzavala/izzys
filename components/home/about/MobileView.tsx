@@ -5,7 +5,7 @@ import AboutUsHero3 from "@/public/assets/izzy_banner.jpg";
 
 export default function MobileView() {
   return (
-    <div className='w-full bg-white px-12 min-h-[50rem] flex flex-col items-center'>
+    <div className='w-full bg-white px-8 min-h-[50rem] flex flex-col items-center'>
       {/* About Us Title */}
       <h1 className='text-5xl md:text-7xl lg:text-8xl font-light text-orange-300 mt-12 md:mt-5'>
         About Us
@@ -34,7 +34,7 @@ export default function MobileView() {
         </div>
 
         {/* Right Image - Ensuring consistent height */}
-        <div className='relative w-full h-[450px] '>
+        <div className='relative w-full h-[450px]'>
           <Image
             src={AboutUsHero3}
             alt='Landscaping example 3'
@@ -45,7 +45,7 @@ export default function MobileView() {
       </div>
 
       {/* Description Text */}
-      <p className='max-w-4xl text-center text-gray-600 text-sm md:text-base font-light leading-relaxed tracking-wide mt-6'>
+      <p className='max-w-4xl text-center text-gray-600 text-sm md:text-base font-light leading-relaxed tracking-wide'>
         Izzy&apos;s Landscaping is dedicated to creating beautiful, high-quality
         outdoor spaces across Minnesota. From lush gardens to durable
         hardscapes, we bring expert craftsmanship and attention to detail.

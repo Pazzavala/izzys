@@ -1,5 +1,5 @@
-import React from 'react';
-import TestimonialsSlider from './TestimonialsSlider';
+import React from "react";
+import TestimonialsSlider from "./TestimonialsSlider";
 
 export default function TestimonialsSection() {
   return (
@@ -11,7 +11,7 @@ export default function TestimonialsSection() {
       text-white
     '
     >
-      <div className='container mx-auto px-4'>
+      <div className='container mx-auto px-4 md:px-6 lg:px-8'>
         <h2
           className='
           text-center 

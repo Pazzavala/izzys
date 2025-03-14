@@ -57,6 +57,32 @@ export const contactInfo = [
   },
 ];
 
+import { MdEmail, MdPhone } from "react-icons/md"; // Import email and phone icons
+
+// Socials data
+export const contactAndSocials = [
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/IzzysLandscaping",
+    icon: FaFacebook,
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/izzys_landscaping/?igsh=NTc4MTIwNjQ2YQ%3D%3D#",
+    icon: FaInstagram,
+  },
+  {
+    name: "Email",
+    url: "mailto:landscaping.izzy@gmail.com",
+    icon: MdEmail,
+  },
+  {
+    name: "Phone",
+    url: "tel:6129789411",
+    icon: MdPhone,
+  },
+];
+
 export const socials = [
   {
     name: "Facebook",
@@ -67,6 +93,11 @@ export const socials = [
     name: "Instagram",
     url: "https://www.instagram.com/izzys_landscaping/?igsh=NTc4MTIwNjQ2YQ%3D%3D#",
     icon: FaInstagram,
+  },
+  {
+    name: "Email",
+    url: "mailto:landscaping.izzy@gmail.com",
+    icon: MdEmail,
   },
 ];
 
@@ -92,6 +123,10 @@ export const services = [
     name: "Drainage",
     url: "/assets/Izzys/IZZY6.webp",
   },
+  {
+    name: "Paver Patios",
+    url: "/assets/Izzys/IZZY5.webp",
+  },
   // {
   //   name: 'Graiding and Draining Correction',
   //   url: '/assets/IrrigationExample.png',
@@ -100,10 +135,6 @@ export const services = [
   //   name: 'Draintile French Drain',
   //   url: '/assets/IrrigationExample.png',
   // },
-  {
-    name: "Paver Patios",
-    url: "/assets/Izzys/IZZY5.webp",
-  },
   // {
   //   name: 'Flagstone',
   //   url: '/assets/PatioExample.png',
@@ -122,10 +153,6 @@ export const services = [
   // },
   // {
   //   name: 'Firepits',
-  //   url: '/assets/PatioExample.png',
-  // },
-  // {
-  //   name: 'Outdoors Kitchen',
   //   url: '/assets/PatioExample.png',
   // },
   // {

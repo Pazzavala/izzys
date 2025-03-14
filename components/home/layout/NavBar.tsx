@@ -24,7 +24,7 @@ export default function NavBar() {
           </div>
 
           {/* Navigation Links */}
-          <div className='hidden sm:flex flex-wrap justify-end items-center gap-4 sm:gap-16 mb-4 sm:mb-0'>
+          <div className='hidden sm:flex flex-wrap justify-end items-center gap-4 sm:gap-8 md:gap-14 lg:gap-20 mb-4 sm:mb-0'>
             {navLinks.map((navLink) => (
               <Link
                 key={navLink.name}
@@ -58,7 +58,10 @@ export default function NavBar() {
             </div>
 
             {/* Button */}
-            <Button text='(612) 978-9411' />
+            <Button
+              text='(612) 978-9411'
+              py={"py-[.35rem]"}
+            />
           </div>
         </div>
       </div>

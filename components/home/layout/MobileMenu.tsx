@@ -80,7 +80,10 @@ export default function MobileMenu() {
 
             {/* Button */}
             <div className='mt-4'>
-              <Button text='(612) 978-9411' />
+              <Button
+                text='(612) 978-9411'
+                py={"py-[.35rem]"}
+              />
             </div>
           </div>
         )}
