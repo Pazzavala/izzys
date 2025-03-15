@@ -54,7 +54,6 @@ export default function Gallery() {
           ],
         }}
         onClick={({ index }) => setIndex(index)}
-        //   columns={6}
       />
       <Lightbox
         open={index >= 0}

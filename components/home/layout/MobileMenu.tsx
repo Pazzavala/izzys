@@ -33,11 +33,19 @@ export default function MobileMenu() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className='text-gray-700 focus:outline-none'
+            aria-expanded={isOpen}
+            aria-label={isOpen ? "Close menu" : "Open Menu"}
           >
             {isOpen ? (
-              <FaTimes className='w-6 h-6' /> // Close icon (X)
+              <FaTimes
+                className='w-6 h-6'
+                aria-hidden
+              /> // Close icon (X)
             ) : (
-              <FaBars className='w-6 h-6' /> // Hamburger icon
+              <FaBars
+                className='w-6 h-6'
+                aria-hidden
+              /> // Hamburger icon
             )}
           </button>
         </div>
@@ -71,9 +79,13 @@ export default function MobileMenu() {
                   href={social.url}
                   target='_blank'
                   rel='noopener noreferrer'
+                  aria-label={social.name}
                   className='text-gray-700 hover:text-green-600 transition-colors duration-200'
                 >
-                  <social.icon className='w-6 h-6' />
+                  <social.icon
+                    className='w-6 h-6'
+                    aria-hidden
+                  />
                 </a>
               ))}
             </div>

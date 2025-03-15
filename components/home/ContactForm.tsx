@@ -69,55 +69,74 @@ const ContactForm = () => {
       </h2>
       {/* Name Input */}
       <div className='relative'>
+        <label
+          htmlFor='name-input'
+          className='absolute left-3 -top-2 bg-white px-1 text-sm text-gray-500'
+        >
+          Name
+        </label>
         <input
           type='text'
           name='name'
+          id='name-input'
           // placeholder='Your Name'
           value={formData.name}
           onChange={handleChange}
           className='w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8106] focus:border-transparent transition-all'
           required
         />
-        <span className='absolute left-3 -top-2 bg-white px-1 text-sm text-gray-500'>
-          Name
-        </span>
       </div>
 
       {/* Email Input */}
       <div className='relative'>
+        <label
+          htmlFor='email-input'
+          className='absolute left-3 -top-2 bg-white px-1 text-sm text-gray-500'
+        >
+          Email
+        </label>
         <input
           type='email'
           name='email'
+          id='email-input'
           // placeholder='Your Email'
           value={formData.email}
           onChange={handleChange}
           className='w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8106] focus:border-transparent transition-all'
           required
         />
-        <span className='absolute left-3 -top-2 bg-white px-1 text-sm text-gray-500'>
-          Email
-        </span>
       </div>
 
       <div className='relative'>
+        <label
+          htmlFor='phone-input'
+          className='absolute left-3 -top-2 bg-white px-1 text-sm text-gray-500'
+        >
+          Phone
+        </label>
         <input
           type='tel'
           name='phone'
+          id='phone-input'
           // placeholder='Your Phone Number'
           value={formData.phone}
           onChange={handleChange}
           className='w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8106] focus:border-transparent transition-all'
           required
         />
-        <span className='absolute left-3 -top-2 bg-white px-1 text-sm text-gray-500'>
-          Phone
-        </span>
       </div>
 
       {/* Message Textarea */}
       <div className='relative'>
+        <label
+          htmlFor='message-input'
+          className='absolute left-3 -top-2 bg-white px-1 text-sm text-gray-500'
+        >
+          Message
+        </label>
         <textarea
           name='message'
+          id='message-input'
           // placeholder='Your Message'
           value={formData.message}
           onChange={handleChange}
@@ -125,9 +144,6 @@ const ContactForm = () => {
           rows={5}
           required
         />
-        <span className='absolute left-3 -top-2 bg-white px-1 text-sm text-gray-500'>
-          Message
-        </span>
       </div>
 
       {/* Submit Button */}

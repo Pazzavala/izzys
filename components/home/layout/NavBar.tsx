@@ -51,8 +51,12 @@ export default function NavBar() {
                   target='_blank'
                   rel='noopener noreferrer'
                   className='text-gray-700 hover:text-[#FF8106] transition-colors duration-200'
+                  aria-label={social.name}
                 >
-                  <social.icon className='w-6 h-6 rounded-full' />
+                  <social.icon
+                    className='w-6 h-6 rounded-full'
+                    aria-hidden
+                  />
                 </a>
               ))}
             </div>
