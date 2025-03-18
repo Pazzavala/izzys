@@ -12,7 +12,9 @@ export interface CloudinaryImageData {
 export interface ServiceBase {
   id: string;
   name: string;
-  folderPath: string;
+  // folderPath: string;
+  mainImageId: string;
+  galleryTag: string;
   description: string;
   fullDescription: string;
   features: string[];

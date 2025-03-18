@@ -2,7 +2,7 @@
 import React from "react";
 import ContactForm from "./ContactForm";
 import Image from "next/image";
-import TeamImage from "@/public/assets/team.jpg";
+import IzzyBanner from "@/public/assets/izzy_banner.jpg";
 
 export default function ContactSection() {
   return (
@@ -26,7 +26,7 @@ export default function ContactSection() {
         {/* Image Section */}
         <div className='w-full md:max-w-lg lg:max-w-xl h-auto rounded-xl overflow-hidden shadow-lg'>
           <Image
-            src={TeamImage}
+            src={IzzyBanner}
             alt="Izzy's Team"
             className='w-full h-full object-cover'
           />

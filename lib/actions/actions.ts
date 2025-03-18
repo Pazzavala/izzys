@@ -57,18 +57,40 @@ export const getCloudinaryImageData = (
   };
 };
 
-// export const getCloudinaryImageData = (
-//   resource: CloudinaryReource
-// ): CloudinaryImageData => {
-//   return {
-//     src: resource.secure_url,
-//     width: resource.width,
-//     height: resource.height,
-//     // blurDataUrl: getBlurDataUrl(resource.secure_url),
-//     key: resource.public_id,
-//     alt: resource.public_id,
-//   };
-// };
+export const getImagesByTag = async (
+  tag: string
+): Promise<CloudinaryImageData[]> => {
+  try {
+    const cloudinaryURL = `https://api.cloudinary.com/v1_1/${
+      cld.getConfig().cloud?.cloudName
+    }/resources/image/upload?tags=${tag}&max_results=10`;
+
+    const response = await fetch(cloudinaryURL, {
+      headers: {
+        Authorization: `Basic ${Buffer.from(
+          cldApiKey + ":" + cldApiSecret
+        ).toString("base64")}`,
+      },
+    });
+
+    const data = (await response.json()) as CloudinaryApiResponse;
+
+    if (data.resources) {
+      return data.resources.map((resource: CloudinaryReource) => {
+        return getCloudinaryImageData(
+          resource.public_id,
+          resource.width,
+          resource.height
+        );
+      });
+    }
+
+    return [];
+  } catch (error) {
+    console.error("Error fetching images by tag from Cloudinary:", error);
+    return [];
+  }
+};
 
 // Get all images from a folder in cldnry
 export const getImagesFromFolder = async (
@@ -106,25 +128,15 @@ export const getImagesFromFolder = async (
   }
 };
 
-// Process services data with main cldnry image
 export const processServiceData = (
   service: ServiceBase,
   galleryImages: CloudinaryImageData[] = []
 ): Service => {
-  // Get main img
-  const mainImagePath = `${service.folderPath}/main`;
-  console.log(mainImagePath);
-
-  const { src /*blurDataUrl*/ } = getCloudinaryImageData(
-    mainImagePath,
-    800,
-    600
-  );
+  const { src } = getCloudinaryImageData(service.mainImageId, 800, 600);
 
   return {
     ...service,
     src,
-    // blurDataUrl,
     gallery: galleryImages,
   };
 };

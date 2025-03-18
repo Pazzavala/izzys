@@ -163,8 +163,8 @@ async function getServiceData(id: string) {
   if (!service) return null;
 
   // get gallery Images from service's folder
-  const galleryFolderPath = `${service.folderPath}/gallery`;
-  const galleryImages = await getImagesFromFolder(galleryFolderPath);
+  // const galleryFolderPath = `${service.folderPath}/gallery`;
+  const galleryImages = await getImagesFromFolder(service.galleryTag);
 
   // Process service data with cldnry images
   return processServiceData(service, galleryImages);
