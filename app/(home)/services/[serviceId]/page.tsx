@@ -9,33 +9,22 @@ import {
 import { services } from "@/lib/data";
 import Gallery from "@/components/ui/Gallery";
 
-// Generate static params at build time
-export async function generateStaticParams() {
-  return services.map((service) => ({
-    id: service.id,
-  }));
-}
-async function getServiceData(id: string) {
-  const service = getServiceByID(id);
-
-  if (!service) return null;
-
-  // get gallery Images from service's folder
-  const galleryFolderPath = `${service.folderPath}/gallery`;
-  const galleryImages = await getImagesFromFolder(galleryFolderPath);
-
-  // Process service data with cldnry images
-  return processServiceData(service, galleryImages);
-}
-
 interface PageProps {
   params: {
     serviceId: string;
   };
 }
 
-export default async function ServicePage({ params }: Readonly<PageProps>) {
-  const service = await getServiceData(params.serviceId);
+// Generate static params at build time
+export async function generateStaticParams() {
+  return services.map((service) => ({
+    serviceId: service.id,
+  }));
+}
+
+export default async function ServicePage({ params }: PageProps) {
+  const resolvedParams = await params;
+  const service = await getServiceData(resolvedParams.serviceId);
 
   if (!service) {
     return (
@@ -168,9 +157,27 @@ export default async function ServicePage({ params }: Readonly<PageProps>) {
   );
 }
 
+async function getServiceData(id: string) {
+  const service = getServiceByID(id);
+
+  if (!service) return null;
+
+  // get gallery Images from service's folder
+  const galleryFolderPath = `${service.folderPath}/gallery`;
+  const galleryImages = await getImagesFromFolder(galleryFolderPath);
+
+  // Process service data with cldnry images
+  return processServiceData(service, galleryImages);
+}
+
 // Add metadata generation for SEO
-export async function generateMetadata({ params }: { params: { id: string } }) {
-  const service = await getServiceData(params.id);
+export async function generateMetadata({
+  params,
+}: {
+  params: { serviceId: string };
+}) {
+  const resolvedParams = await params;
+  const service = await getServiceData(resolvedParams.serviceId);
 
   if (!service) {
     return {
