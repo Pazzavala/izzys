@@ -10,9 +10,9 @@ import { services } from "@/lib/data";
 import Gallery from "@/components/ui/Gallery";
 
 interface PageProps {
-  params: {
+  params: Promise<{
     serviceId: string;
-  };
+  }>;
 }
 
 // Generate static params at build time
@@ -23,8 +23,8 @@ export async function generateStaticParams() {
 }
 
 export default async function ServicePage({ params }: PageProps) {
-  const resolvedParams = await params;
-  const service = await getServiceData(resolvedParams.serviceId);
+  const { serviceId } = await params;
+  const service = await getServiceData(serviceId);
 
   if (!service) {
     return (
@@ -171,13 +171,9 @@ async function getServiceData(id: string) {
 }
 
 // Add metadata generation for SEO
-export async function generateMetadata({
-  params,
-}: {
-  params: { serviceId: string };
-}) {
-  const resolvedParams = await params;
-  const service = await getServiceData(resolvedParams.serviceId);
+export async function generateMetadata({ params }: PageProps) {
+  const { serviceId } = await params;
+  const service = await getServiceData(serviceId);
 
   if (!service) {
     return {

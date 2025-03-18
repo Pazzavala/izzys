@@ -2,7 +2,7 @@ export default function AboutPage() {
   return (
     <div
       className='max-w-7xl w-full mx-auto px-12 min-h-screen pb-10 bg-cover bg-center'
-      style={{ backgroundImage: `url('/assets/PreCut.png' )` }}
+      // style={{ backgroundImage: `url('/assets/PreCut.png' )` }}
     >
       <div className='grid grid-cols-12'>
         <div className='container col-span-6'>
