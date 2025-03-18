@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import AboutUsHero1 from "@/public/assets/izzy_banner.jpg";
 import AboutUsHero3 from "@/public/assets/izzy_banner.jpg";
-import Gallery from "@/components/ui/Gallery";
+import ServiceCard from "@/components/home/ServiceCard";
 
 export default function LandscapingServicesPage() {
   return (
@@ -10,8 +10,8 @@ export default function LandscapingServicesPage() {
       <div className='flex flex-col lg:flex-row py-12'>
         <div className='container'>
           {/* About Us Title */}
-          <h1 className='text-5xl md:text-6xl lg:text-7xl text-center lg:text-start font-light text-orange-300 mt-5 md:mt-5 lg:mt-10'>
-            Our Services
+          <h1 className='text-5xl md:text-6xl lg:text-7xl text-center lg:text-start font-light text-orange-300 mt-5 md:mt-5 lg:mt-10 '>
+            Our Landscaping Services
           </h1>
           {/* Description Text */}
           <p className='text-center lg:text-left text-gray-600 text-sm lg:text-base font-light leading-relaxed tracking-wide mt-6 lg:mr-16'>
@@ -46,7 +46,14 @@ export default function LandscapingServicesPage() {
         </div>
       </div>
 
-      <Gallery />
+      <ServiceCard />
     </div>
   );
 }
+
+// Add metadata for improved SEO
+export const metadata = {
+  title: "Our Landscaping Services",
+  description:
+    "Explore our full range of professional landscaping services for your home or business",
+};

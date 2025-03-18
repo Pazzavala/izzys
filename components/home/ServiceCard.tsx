@@ -1,23 +1,54 @@
-import React from 'react';
+import { processServiceData } from "@/lib/actions/actions";
+import Link from "next/link";
+import Image from "next/image";
+import React from "react";
+import { services } from "@/lib/data";
 
 interface ServiceCardProps {
-  name: string;
-  url: string;
+  showAmount?: number;
 }
 
-export default function ServiceCard({ name, url }: Readonly<ServiceCardProps>) {
-  return (
-    <article
-      className='group w-full h-72 bg-cover bg-center relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl hover:scale-105 transition duration-300'
-      style={{ backgroundImage: `url(${url})` }}
-    >
-      {/* Dark overlay */}
-      <div className='absolute inset-0 bg-black/50 group-hover:bg-black/55  transition duration-300' />
+async function getServicesData() {
+  return services.map((service) => processServiceData(service));
+}
 
-      {/* Content Container */}
-      <div className='relative z-10 flex items-center justify-center h-full'>
-        <h4 className='text-white text-2xl font-bold text-center'>{name}</h4>
-      </div>
-    </article>
+export default async function ServiceCard({
+  showAmount,
+}: Readonly<ServiceCardProps>) {
+  const servicesWithImages = await getServicesData();
+
+  const displayedServices = showAmount
+    ? servicesWithImages.slice(0, showAmount)
+    : servicesWithImages;
+
+  return (
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+      {displayedServices.map((service) => (
+        <Link
+          key={service.id}
+          href={`/services/${service.id}`}
+          className='border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition'
+        >
+          <div className='relative h-64 w-full'>
+            <Image
+              src={service.src}
+              alt={service.name}
+              fill
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+              className='object-cover'
+              // placeholder='blur'
+              // blurDataURL={service.blurDataUrl}
+            />
+          </div>
+          <div className='p-4'>
+            <h2 className='text-xl font-semibold mb-2 text-gray-800'>
+              {service.name}
+            </h2>
+            <p className='text-gray-600'>{service.description}</p>
+            <div className='mt-3 text-blue-600 font-medium'>Learn more</div>
+          </div>
+        </Link>
+      ))}
+    </div>
   );
 }

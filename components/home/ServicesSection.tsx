@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../ui/Button";
-import { services } from "@/lib/data";
 import ServiceCard from "./ServiceCard";
+import Link from "next/link";
 
 export default function ServicesSection() {
   return (
@@ -29,20 +29,15 @@ export default function ServicesSection() {
         </div>
 
         {/* Services Grid */}
-        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-5'>
-          {services.map((service) => (
-            <ServiceCard
-              key={service.name}
-              name={service.name}
-              url={service.url}
-            />
-          ))}
-        </div>
+        <ServiceCard showAmount={6} />
 
         {/* See all Services Section */}
-        <div className='h-24 flex items-center justify-center'>
+        <Link
+          href={"/services"}
+          className='h-24 flex items-center justify-center'
+        >
           <Button text='See More Services' />
-        </div>
+        </Link>
       </div>
     </section>
   );

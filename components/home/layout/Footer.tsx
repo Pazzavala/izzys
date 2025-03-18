@@ -74,8 +74,8 @@ export default function Footer() {
                 <div className='text-sm grid grid-cols-1 gap-2'>
                   {shortServiceList.map((service) => (
                     <a
-                      key={service.name}
-                      href={service.url}
+                      key={service.id}
+                      href={service.id}
                       className=' hover:text-[#FF8106] transition-colors'
                     >
                       {service.name}
