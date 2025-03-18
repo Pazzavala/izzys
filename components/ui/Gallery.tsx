@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { servicesPhotos } from "@/lib/data";
 
 import {
   RenderImageContext,
@@ -19,7 +18,7 @@ interface GalleryProps {
   gallery: CloudinaryImageData[];
 }
 
-export default function Gallery({ gallery }: GalleryProps) {
+export default function Gallery({ gallery }: Readonly<GalleryProps>) {
   const [index, setIndex] = useState(-1);
 
   return (
