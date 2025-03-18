@@ -15,11 +15,8 @@ export async function generateStaticParams() {
     id: service.id,
   }));
 }
-
 async function getServiceData(id: string) {
-  console.log("Fetching service for ID:", id);
   const service = getServiceByID(id);
-  console.log("Service found:", service);
 
   if (!service) return null;
 
@@ -31,14 +28,13 @@ async function getServiceData(id: string) {
   return processServiceData(service, galleryImages);
 }
 
-export default async function ServicePage({
-  params,
-}: Readonly<{
+interface PageProps {
   params: {
     serviceId: string;
   };
-}>) {
-  console.log("params.id:", params.serviceId);
+}
+
+export default async function ServicePage({ params }: Readonly<PageProps>) {
   const service = await getServiceData(params.serviceId);
 
   if (!service) {
