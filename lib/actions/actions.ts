@@ -42,8 +42,8 @@ export const getCloudinaryImageData = (
   const img = cld.image(public_id);
   img.resize(fill().width(width).height(height));
 
-  const blurImg = cld.image(public_id);
-  blurImg.resize(fill().width(20).height(20));
+  // const blurImg = cld.image(public_id);
+  // blurImg.resize(fill().width(20).height(20));
 
   if (!img) throw new Error(`Image data not found for public_id: ${public_id}`);
 
@@ -63,14 +63,21 @@ export const getImagesByTag = async (
   try {
     const cloudinaryURL = `https://api.cloudinary.com/v1_1/${
       cld.getConfig().cloud?.cloudName
-    }/resources/image/upload?tags=${tag}&max_results=10`;
+    }/resources/search`;
 
     const response = await fetch(cloudinaryURL, {
+      method: "POST",
       headers: {
+        "Content-Type": "application/json",
         Authorization: `Basic ${Buffer.from(
           cldApiKey + ":" + cldApiSecret
         ).toString("base64")}`,
       },
+
+      body: JSON.stringify({
+        expression: `tags:${tag}`,
+        max_results: 10,
+      }),
     });
 
     const data = (await response.json()) as CloudinaryApiResponse;
@@ -130,9 +137,11 @@ export const getImagesFromFolder = async (
 
 export const processServiceData = (
   service: ServiceBase,
-  galleryImages: CloudinaryImageData[] = []
+  galleryImages?: CloudinaryImageData[]
 ): Service => {
   const { src } = getCloudinaryImageData(service.mainImageId, 800, 600);
+
+  if (!galleryImages) galleryImages = [];
 
   return {
     ...service,

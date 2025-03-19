@@ -4,7 +4,7 @@ import Link from "next/link";
 import {
   getServiceByID,
   processServiceData,
-  getImagesFromFolder,
+  getImagesByTag,
 } from "@/lib/actions/actions";
 import { services } from "@/lib/data";
 import Gallery from "@/components/ui/Gallery";
@@ -22,7 +22,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ServicePage({ params }: PageProps) {
+export default async function ServicePage({ params }: Readonly<PageProps>) {
   const { serviceId } = await params;
   const service = await getServiceData(serviceId);
 
@@ -164,8 +164,9 @@ async function getServiceData(id: string) {
 
   // get gallery Images from service's folder
   // const galleryFolderPath = `${service.folderPath}/gallery`;
-  const galleryImages = await getImagesFromFolder(service.galleryTag);
+  const galleryImages = await getImagesByTag(service.galleryTag);
 
+  console.log(galleryImages);
   // Process service data with cldnry images
   return processServiceData(service, galleryImages);
 }
