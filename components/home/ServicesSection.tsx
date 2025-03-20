@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "../ui/Button";
 import ServiceCard from "./ServiceCard";
-import Link from "next/link";
 
 export default function ServicesSection() {
   return (
