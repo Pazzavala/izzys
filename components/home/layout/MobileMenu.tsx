@@ -103,7 +103,7 @@ export default function MobileMenu() {
           {/* Social Icons */}
           <div className='flex gap-6 mt-4'>
             {socials.map((social) => (
-              <a
+              <Link
                 key={social.name}
                 href={social.url}
                 target='_blank'
@@ -115,7 +115,7 @@ export default function MobileMenu() {
                   className='w-8 h-8'
                   aria-hidden
                 />
-              </a>
+              </Link>
             ))}
           </div>
 

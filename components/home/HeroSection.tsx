@@ -1,19 +1,23 @@
-import { getCloudinaryImageData } from "@/lib/actions/actions";
+import Image from "next/image";
 import Button from "../ui/Button";
 
-export default function HeroSection() {
-  const heroImage = getCloudinaryImageData(
-    "hero-image-public-id",
-    2000,
-    1334,
-    "hero"
-  );
+interface HeroSectionProps {
+  src: string;
+  width: number;
+  height: number;
+  alt?: string;
+}
 
+export default function HeroSection({ src, alt }: Readonly<HeroSectionProps>) {
   return (
-    <section
-      className='w-full min-h-[65vh] md:min-h-[70vh] xl:min-h-[80vh] h-screen flex items-center justify-center py-16 px-4 bg-cover bg-center relative'
-      style={{ backgroundImage: `url(${heroImage.src})` }}
-    >
+    <section className='w-full min-h-[65vh] md:min-h-[70vh] xl:min-h-[80vh] h-screen flex items-center justify-center py-16 px-4 bg-cover bg-center relative'>
+      <Image
+        src={src}
+        alt={alt ?? "hero section"}
+        fill
+        priority
+        className='object-cover'
+      />
       {/* Dark overlay */}
       <div className='absolute inset-0 bg-black/50' />
 
@@ -23,7 +27,7 @@ export default function HeroSection() {
           IZZYS
         </h1>
         {/* Headline */}
-        <h1 className='max-w-2xl text-[clamp(2rem,5vw,3rem)] sm:text-6xl font-mono font-black leading-tight mb-20'>
+        <h1 className='max-w-2xl text-5xl sm:text-6xl font-mono font-black leading-tight mb-20'>
           Landscaping & Construction
         </h1>
 

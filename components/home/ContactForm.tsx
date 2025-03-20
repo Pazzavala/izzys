@@ -1,5 +1,7 @@
+"use client";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { contactAndSocials } from "@/lib/data";
+import Link from "next/link";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -159,7 +161,7 @@ const ContactForm = () => {
         <p className='text-gray-600 mb-7'>or directly at</p>
         <div className='flex justify-center gap-4'>
           {contactAndSocials.map((social) => (
-            <a
+            <Link
               key={social.name}
               href={social.url}
               target='_blank'
@@ -168,7 +170,7 @@ const ContactForm = () => {
               aria-label={social.name}
             >
               <social.icon className='w-6 h-6' />
-            </a>
+            </Link>
           ))}
         </div>
       </div>

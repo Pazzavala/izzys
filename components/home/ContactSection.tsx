@@ -3,16 +3,30 @@ import React from "react";
 import ContactForm from "./ContactForm";
 import Image from "next/image";
 import IzzyBanner from "@/public/assets/izzy_banner.jpg";
-import { getCloudinaryImageData } from "@/lib/actions/actions";
 
-export default function ContactSection() {
-  const contactBgImage = getCloudinaryImageData("contact-bg-image-public-id");
+interface ContactSectionProps {
+  src: string;
+  width: number;
+  height: number;
+  alt?: string;
+}
 
+export default function ContactSection({
+  src,
+  alt,
+}: Readonly<ContactSectionProps>) {
   return (
     <section
       className='w-full min-h-[65vh] md:min-h-[70vh] xl:min-h-[80vh] flex items-center justify-center py-16 px-4 bg-cover bg-center relative'
-      style={{ backgroundImage: `url(${contactBgImage.src})` }}
+      // style={{ backgroundImage: `url("${contactBgImage.src}")` }}
     >
+      <Image
+        src={src}
+        alt={alt ?? "contact section"}
+        fill
+        priority
+        className='object-cover'
+      />
       {/* Overlay */}
       <div className='absolute inset-0 bg-black/60 backdrop-blur-xs' />
 

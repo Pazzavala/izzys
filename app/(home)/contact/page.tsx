@@ -1,18 +1,30 @@
-"use client";
-
+import React from "react";
+import Image from "next/image";
 import ContactForm from "@/components/home/ContactForm";
 import { getCloudinaryImageData } from "@/lib/actions/actions";
-import React from "react";
 
-export default function ContactPage() {
-  const contactBgImage = getCloudinaryImageData("contact-bg-image-public-id");
+// This will run at build time for static generation
+async function getContactImage() {
+  return getCloudinaryImageData(
+    "contact-bg-image-public-id",
+    1800,
+    1200,
+    "contact-section"
+  );
+}
+
+export default async function ContactPage() {
+  const contactImage = await getContactImage();
+
   return (
-    <section
-      className='relative w-full h-screen flex items-center justify-center py-16 px-4 bg-cover bg-center overflow-hidden'
-      style={{
-        backgroundImage: `url(${contactBgImage.src})`,
-      }}
-    >
+    <section className='relative w-full h-screen flex items-center justify-center py-16 px-4 bg-cover bg-center overflow-hidden'>
+      <Image
+        src={contactImage.src}
+        alt={contactImage.alt ?? "contact page"}
+        fill
+        priority
+        className='object-cover'
+      />
       {/* Overlay */}
       <div className='absolute inset-0 bg-black/60 backdrop-blur-xs' />
 
@@ -24,3 +36,5 @@ export default function ContactPage() {
     </section>
   );
 }
+
+export const revalidate = 86400;

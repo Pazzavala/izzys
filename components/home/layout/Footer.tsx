@@ -120,9 +120,13 @@ export default function Footer() {
                       href={social.url}
                       target='_blank'
                       rel='noopener noreferrer'
+                      aria-label={social.name}
                       className='text-gray-700 hover:text-[#FF8106] transition-colors'
                     >
-                      <social.icon className='text-2xl' />
+                      <social.icon
+                        className='text-2xl'
+                        aria-hidden
+                      />
                     </Link>
                   ))}
                 </div>
@@ -138,9 +142,13 @@ export default function Footer() {
                     href={social.url}
                     target='_blank'
                     rel='noopener noreferrer'
+                    aria-label={social.name}
                     className=' text-gray-700 hover:text-[#FF8106] transition-colors'
                   >
-                    <social.icon className='bg-white text-3xl' />
+                    <social.icon
+                      className='bg-white text-3xl'
+                      aria-hidden
+                    />
                   </Link>
                 ))}
               </div>

@@ -1,10 +1,8 @@
 // Cloudinary image data
 export interface CloudinaryImageData {
   src: string;
-  //   blurDataUrl: string;
   width: number;
   height: number;
-  key?: string;
   alt?: string;
 }
 
@@ -12,7 +10,6 @@ export interface CloudinaryImageData {
 export interface ServiceBase {
   id: string;
   name: string;
-  // folderPath: string;
   mainImageId: string;
   galleryTag: string;
   description: string;
@@ -23,7 +20,6 @@ export interface ServiceBase {
 // Service with processed images
 export interface Service extends ServiceBase {
   src: string;
-  //   blurDataUrl: string;
   gallery: CloudinaryImageData[];
 }
 

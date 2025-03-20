@@ -27,7 +27,7 @@ export default async function ServiceCard({
         <Link
           key={service.id}
           href={`/services/${service.id}`}
-          className='border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition'
+          className='border border-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition'
         >
           <div className='relative h-64 w-full'>
             <Image
@@ -36,8 +36,6 @@ export default async function ServiceCard({
               fill
               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
               className='object-cover'
-              // placeholder='blur'
-              // blurDataURL={service.blurDataUrl}
             />
           </div>
           <div className='p-4'>

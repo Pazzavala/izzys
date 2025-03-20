@@ -45,19 +45,19 @@ export default function NavBar() {
             {/* Social Icons */}
             <div className='flex gap-4'>
               {socials.map((social) => (
-                <a
+                <Link
                   key={social.name}
                   href={social.url}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='text-gray-700 hover:text-[#FF8106] transition-colors duration-200'
                   aria-label={social.name}
+                  className='text-gray-700 hover:text-[#FF8106] transition-colors duration-200'
                 >
                   <social.icon
                     className='w-6 h-6 rounded-full'
                     aria-hidden
                   />
-                </a>
+                </Link>
               ))}
             </div>
 

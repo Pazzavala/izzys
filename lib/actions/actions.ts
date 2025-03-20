@@ -8,6 +8,7 @@ import {
   Service,
   ServiceBase,
 } from "../types";
+import { cache } from "react";
 
 const cldCloudName = process.env.CLOUDINARY_CLOUD_NAME;
 const cldApiKey = process.env.CLOUDINARY_API_KEY;
@@ -32,25 +33,27 @@ export const getServiceByID = (id: string): ServiceBase | undefined => {
 };
 
 // Get cldnry img URL and blur data for specific path
-export const getCloudinaryImageData = (
-  public_id: string,
-  width: number = 1800,
-  height: number = 1200,
-  alt?: string
-): CloudinaryImageData => {
-  const img = cld.image(public_id);
-  img.resize(fill().width(width).height(height));
+export const getCloudinaryImageData = cache(
+  (
+    public_id: string,
+    width: number = 1800,
+    height: number = 1200,
+    alt?: string
+  ): CloudinaryImageData => {
+    const img = cld.image(public_id);
+    img.resize(fill().width(width).height(height));
 
-  if (!img) throw new Error(`Image data not found for public_id: ${public_id}`);
+    if (!img)
+      throw new Error(`Image data not found for public_id: ${public_id}`);
 
-  return {
-    src: img.toURL(),
-    width,
-    height,
-    key: public_id,
-    alt: alt ?? public_id,
-  };
-};
+    return {
+      src: img.toURL(),
+      width,
+      height,
+      alt: alt ?? public_id,
+    };
+  }
+);
 
 export const getImagesByTag = async (
   tag: string
@@ -107,41 +110,4 @@ export const processServiceData = (
     src,
     gallery: galleryImages,
   };
-};
-
-// Probably wont use
-// Get all images from a folder in cldnry
-export const getImagesFromFolder = async (
-  folderPath: string
-): Promise<CloudinaryImageData[]> => {
-  try {
-    const cloudinaryURL = `https://api.cloudinary.com/v1_1/${
-      cld.getConfig().cloud?.cloudName
-    }/resources/image/upload?prefix=${folderPath}/&max_results=10`;
-
-    const response = await fetch(cloudinaryURL, {
-      headers: {
-        Authorization: `Basic ${Buffer.from(
-          cldApiKey + ":" + cldApiSecret
-        ).toString("base64")}`,
-      },
-    });
-
-    const data = (await response.json()) as CloudinaryApiResponse;
-
-    if (data.resources) {
-      return data.resources.map((resource: CloudinaryReource) => {
-        return getCloudinaryImageData(
-          resource.public_id,
-          resource.width,
-          resource.height
-        );
-      });
-    }
-
-    return [];
-  } catch (error) {
-    console.error("Error fetching images from Cloudinary folder:", error);
-    return [];
-  }
 };
