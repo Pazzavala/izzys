@@ -36,7 +36,7 @@ export default async function ServicePage({ params }: Readonly<PageProps>) {
           <div className='mb-6 text-gray-500'>
             <Link
               href='/services'
-              className='inline-flex items-center text-green-600 hover:text-green-800 transition-colors font-medium'
+              className='inline-flex items-center text-[#FF8106] hover:text-[#FF8106]transition-colors font-medium'
             >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -61,7 +61,7 @@ export default async function ServicePage({ params }: Readonly<PageProps>) {
           </p>
           <Link
             href='/services'
-            className='inline-block px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors'
+            className='inline-block px-6 py-3 bg-[#FF8106] text-white font-medium rounded-lg hover:bg-[#FF8106] transition-colors'
           >
             Browse Available Services
           </Link>

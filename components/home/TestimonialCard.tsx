@@ -120,11 +120,11 @@ export function ReviewModal({
   isOpen,
   onClose,
   review,
-}: {
+}: Readonly<{
   isOpen: boolean;
   onClose: () => void;
   review: TestimonialsCardProps;
-}) {
+}>) {
   if (!isOpen) return null;
 
   return (
@@ -140,9 +140,7 @@ export function ReviewModal({
           </button>
         </div>
         <p className='text-gray-700 mb-4'>{review.review}</p>
-        <div className='flex justify-center'>
-          {/* Star rendering function */}
-        </div>
+        <div className='flex justify-center'></div>
       </div>
     </div>
   );
