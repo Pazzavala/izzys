@@ -17,7 +17,7 @@ export default async function ContactPage() {
   const contactImage = await getContactImage();
 
   return (
-    <section className='relative w-full h-screen flex items-center justify-center py-16 px-4 bg-cover bg-center overflow-hidden'>
+    <section className='relative w-full h-screen flex items-center justify-center py-16 px-4 mt-16 lg:mt-24  bg-cover bg-center overflow-hidden'>
       <Image
         src={contactImage.src}
         alt={contactImage.alt ?? "contact page"}
