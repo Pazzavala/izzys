@@ -1,5 +1,5 @@
 import React from "react";
-import { navLinks, socials } from "@/lib/data";
+import { contactAndSocials, navLinks } from "@/lib/data";
 import Image from "next/image";
 import IzzysLogo from "@/public/assets/izzy_banner.jpg";
 import Button from "@/components/ui/Button";
@@ -44,7 +44,7 @@ export default function NavBar() {
           <div className='lg:flex items-center gap-4 hidden'>
             {/* Social Icons */}
             <div className='flex gap-4'>
-              {socials.map((social) => (
+              {contactAndSocials.slice(0, 3).map((social) => (
                 <Link
                   key={social.name}
                   href={social.url}

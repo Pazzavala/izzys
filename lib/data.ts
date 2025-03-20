@@ -22,12 +22,12 @@ export const navLinks = [
 export const metrics = [
   {
     metric: "Projects Comepleted",
-    target: 150,
+    target: 180,
     duration: 2,
   },
   {
     metric: "Customers Worked With",
-    target: 300,
+    target: 150,
     duration: 2,
   },
   {
@@ -58,7 +58,7 @@ export const contactInfo = [
   },
 ];
 
-// Socials data
+// Socials and contact data
 export const contactAndSocials = [
   {
     name: "Facebook",
@@ -79,24 +79,6 @@ export const contactAndSocials = [
     name: "Phone",
     url: "tel:6129789411",
     icon: MdPhone,
-  },
-];
-
-export const socials = [
-  {
-    name: "Facebook",
-    url: "https://www.facebook.com/IzzysLandscaping",
-    icon: FaFacebook,
-  },
-  {
-    name: "Instagram",
-    url: "https://www.instagram.com/izzys_landscaping/?igsh=NTc4MTIwNjQ2YQ%3D%3D#",
-    icon: FaInstagram,
-  },
-  {
-    name: "Email",
-    url: "mailto:landscaping.izzy@gmail.com",
-    icon: MdEmail,
   },
 ];
 

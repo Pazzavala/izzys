@@ -1,7 +1,7 @@
 import IzzysLogo from "@/public/assets/izzy_banner.jpg";
 import React from "react";
 import Image from "next/image";
-import { contactInfo, navLinks, services, socials } from "@/lib/data";
+import { contactAndSocials, contactInfo, navLinks, services } from "@/lib/data";
 import Link from "next/link";
 
 export default function Footer() {
@@ -114,7 +114,7 @@ export default function Footer() {
                   ))}
                 </div>
                 <div className='flex space-x-4'>
-                  {socials.map((social) => (
+                  {contactAndSocials.map((social) => (
                     <Link
                       key={social.name}
                       href={social.url}
@@ -136,7 +136,7 @@ export default function Footer() {
             {/* Contact Info - Visible only on mobile */}
             <div className='sm:hidden flex flex-col items-center justify-center mt-6'>
               <div className='flex justify-center space-x-4'>
-                {socials.map((social) => (
+                {contactAndSocials.map((social) => (
                   <Link
                     key={social.name}
                     href={social.url}
