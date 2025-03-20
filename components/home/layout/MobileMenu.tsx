@@ -1,15 +1,15 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { FaBars, FaTimes } from "react-icons/fa"; // Import hamburger and close icons
-import { navLinks, socials } from "@/lib/data"; // Import your data
-import Button from "@/components/ui/Button"; // Import your button component
+import { FaBars, FaTimes } from "react-icons/fa";
+import { navLinks, socials } from "@/lib/data";
+import Button from "@/components/ui/Button";
 import Image from "next/image";
 import IzzysLogo from "@/public/assets/izzy_banner.jpg";
 import Link from "next/link";
 
 export default function MobileMenu() {
-  const [isOpen, setIsOpen] = useState(false); // State to manage menu open/close
+  const [isOpen, setIsOpen] = useState(false);
 
   // Prevent body scrolling when menu is open
   useEffect(() => {
@@ -78,7 +78,7 @@ export default function MobileMenu() {
           height: "calc(100vh - 69px)",
         }}
       >
-        <div className='container mx-auto px-4 py-8 h-full flex flex-col'>
+        <div className='container mx-auto px-10 py-8 h-full flex flex-col'>
           {/* Navigation Links */}
           <div className='flex flex-col gap-4'>
             {navLinks.map((navLink) => (
@@ -89,7 +89,7 @@ export default function MobileMenu() {
                     ? "/"
                     : navLink.name.toLowerCase()
                 }`}
-                className='block py-3 text-2xl font-bold hover:text-[#FF8106] transition-colors duration-200'
+                className='block py-3 text-2xl font-bold'
                 onClick={() => setIsOpen(false)} // Close menu on link click
               >
                 {navLink.name}
@@ -97,11 +97,8 @@ export default function MobileMenu() {
             ))}
           </div>
 
-          {/* Spacer to push social icons and button to bottom */}
-          <div className='flex-grow'></div>
-
           {/* Social Icons */}
-          <div className='flex gap-6 mt-4'>
+          <div className='flex gap-7 mt-4'>
             {socials.map((social) => (
               <Link
                 key={social.name}
@@ -109,7 +106,7 @@ export default function MobileMenu() {
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label={social.name}
-                className='text-gray-700 hover:text-[#FF8106] transition-colors duration-200'
+                className='text-gray-700'
               >
                 <social.icon
                   className='w-8 h-8'
