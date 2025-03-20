@@ -16,10 +16,7 @@ export default function ContactSection({
   alt,
 }: Readonly<ContactSectionProps>) {
   return (
-    <section
-      className='w-full min-h-[65vh] md:min-h-[70vh] xl:min-h-[80vh] flex items-center justify-center py-16 px-4 bg-cover bg-center relative'
-      // style={{ backgroundImage: `url("${contactBgImage.src}")` }}
-    >
+    <section className='w-full min-h-[65vh] md:min-h-[70vh] xl:min-h-[80vh] flex items-center justify-center py-16 px-4 bg-cover bg-center relative'>
       <Image
         src={src}
         alt={alt ?? "contact section"}
@@ -34,7 +31,7 @@ export default function ContactSection({
       <div className='relative container mx-auto px-4 md:px-6 lg:px-8 flex flex-col-reverse lg:flex-row gap-10 md:gap-20 z-10 items-center justify-center'>
         {/* Text and Form Section */}
         <div className='flex flex-col gap-8 text-center lg:text-left items-center lg:items-start'>
-          <h3 className='text-2xl sm:text-3xl lg:text-4xl font-bodoni_moda font-bold text-white'>
+          <h3 className='text-2xl sm:text-3xl lg:text-4xl font-caladea font-bold text-white text-wrap w-lg'>
             Ready To Transform Your Outdoor Space?
           </h3>
           <ContactForm /> {/* Replace the Button with the ContactForm */}
