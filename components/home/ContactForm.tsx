@@ -2,6 +2,7 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { contactAndSocials } from "@/lib/data";
 import Link from "next/link";
+import Button from "../ui/Button";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -149,12 +150,17 @@ const ContactForm = () => {
       </div>
 
       {/* Submit Button */}
-      <button
+      {/* <button
         type='submit'
         className='w-full bg-[#FF8106] hover:bg-[#FF9106] text-white font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-105 active:scale-95'
       >
         Send Message
-      </button>
+      </button> */}
+
+      <Button
+        link='submit'
+        text='Send Message'
+      />
 
       {/* Social Icons Section */}
       <div className='text-center mt-2'>

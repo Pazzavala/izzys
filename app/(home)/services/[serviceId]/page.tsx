@@ -8,6 +8,9 @@ import {
 } from "@/lib/actions/actions";
 import { services } from "@/lib/data";
 import Gallery from "@/components/ui/Gallery";
+import ServiceCTA from "@/components/home/service/ServiceCTA";
+import RelatedServices from "@/components/home/service/RelatedServices";
+import ServiceFeaturesCard from "@/components/home/service/ServiceFeaturesCard";
 
 interface PageProps {
   params: Promise<{
@@ -28,146 +31,161 @@ export default async function ServicePage({ params }: Readonly<PageProps>) {
 
   if (!service) {
     return (
-      <div className='container mx-auto px-4 py-8 md:px-8 text-gray-800 text-center'>
-        <Link
-          href={"/services"}
-          className='flex items-center text-blue-600 mb-6'
-        >
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            className='h-5 w-5 mr-1'
-            viewBox='0 0 20 20'
-            fill='currentColor'
+      <div className='min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-white to-gray-100 px-4'>
+        <div className='w-full max-w-4xl text-center bg-white rounded-xl shadow-lg p-8'>
+          <div className='mb-6 text-gray-500'>
+            <Link
+              href='/services'
+              className='inline-flex items-center text-green-600 hover:text-green-800 transition-colors font-medium'
+            >
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='h-5 w-5 mr-2'
+                viewBox='0 0 20 20'
+                fill='currentColor'
+              >
+                <path
+                  fillRule='evenodd'
+                  d='M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z'
+                  clipRule='evenodd'
+                />
+              </svg>
+              Return to Services
+            </Link>
+          </div>
+          <h1 className='text-4xl font-bold text-gray-800 mb-4'>
+            Service Not Found
+          </h1>
+          <p className='text-gray-600 mb-6'>
+            We couldn&apos;t find the service you&apos;re looking for.
+          </p>
+          <Link
+            href='/services'
+            className='inline-block px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors'
           >
-            <path
-              fillRule='evenodd'
-              d='M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z'
-              clipRule='evenodd'
-            />
-          </svg>
-          Back to all services
-        </Link>
-        <div>Service Not Found</div>
+            Browse Available Services
+          </Link>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className='container mx-auto px-4 py-8 md:px-8 text-gray-800'>
-      <Link
-        href={"/services"}
-        className='flex items-center text-blue-600'
-      >
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          className='h-5 w-5 mr-1'
-          viewBox='0 0 20 20'
-          fill='currentColor'
-        >
-          <path
-            fillRule='evenodd'
-            d='M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z'
-            clipRule='evenodd'
-          />
-        </svg>
-        Back to all services
-      </Link>
-
-      <div className='flex flex-col lg:flex-row py-4'>
-        <div className='container'>
-          {/* About Us Title */}
-          <h1 className='text-5xl md:text-6xl lg:text-7xl text-center lg:text-start font-light text-orange-300 mt-5 md:mt-5 lg:mt-10 '>
-            {service.name}
-          </h1>
-          {/* Description Text */}
-          <p className='text-center lg:text-left text-gray-600 text-sm lg:text-base font-light leading-relaxed tracking-wide mt-6 lg:mr-16'>
-            {service.description}
-          </p>
-        </div>
-
-        {/* Triptych Image Grid - Consistent Alignment */}
-        <div className='grid grid-cols-1 gap-4 max-w-6xl w-full mt-12 lg:mt-10'>
-          {/* Left Image - Ensuring consistent height */}
-          <div className='relative w-full h-[450px]'>
-            <Image
-              src={service.src}
-              alt='Landscaping example 1'
-              className='rounded-lg object-cover'
-              fill
-            />
-          </div>
-
-          {/* Right Image - Ensuring consistent height */}
-          {/* <div className='relative w-full h-[450px]'>
-            <Image
-              src={service.src}
-              alt='Landscaping example 3'
-              className='rounded-lg object-cover'
-              fill
-            />
-          </div> */}
-        </div>
-      </div>
-
-      <div>
-        <div>
-          <h2>About this service</h2>
-          <p>{service.fullDescription}</p>
-
-          <h2>Service Gallery</h2>
-          <Gallery gallery={service.gallery} />
-        </div>
-
-        <div className='bg-gray-50 p-6 rounded-lg h-fit'>
-          <h3 className='text-xl font-semibold mb-4'>Service Features</h3>
-          <ul className='space-y-2'>
-            {service.features.map((feature) => (
-              <li
-                key={feature}
-                className='flex items-start'
+    <div className='bg-white'>
+      {/* Hero Section */}
+      <div className='relative h-96 md:h-[500px] w-full'>
+        <Image
+          src={service.src}
+          alt={service.name}
+          className='object-cover'
+          priority
+          fill
+        />
+        <div className='absolute inset-0 bg-black/70'>
+          <div className='container mx-auto px-4 h-full flex flex-col justify-end pb-12'>
+            <div className='max-w-3xl'>
+              <Link
+                href='/services'
+                className='inline-flex items-center text-white hover:text-gray-200 transition-colors mb-4'
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
-                  className='h-5 w-5 text-green-500 mr-2 mt-1'
+                  className='h-5 w-5 mr-2'
                   viewBox='0 0 20 20'
                   fill='currentColor'
                 >
                   <path
                     fillRule='evenodd'
-                    d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z'
+                    d='M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z'
                     clipRule='evenodd'
                   />
                 </svg>
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-
-          <div className='mt-8'>
-            <Link
-              href='/contact'
-              className='block w-full bg-green-600 text-white py-3 px-4 rounded-lg text-center font-medium hover:bg-green-700 transition-colors'
-            >
-              Request a Quote
-            </Link>
+                All Services
+              </Link>
+              <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4'>
+                {service.name}
+              </h1>
+              <p className='text-lg text-gray-100 max-w-2xl'>
+                {service.description}
+              </p>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Main Content */}
+      <div className='container mx-auto px-4 py-16'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-12'>
+          {/* Left Column - Main Content */}
+          <div className='lg:col-span-2'>
+            <div className='bg-white rounded-xl'>
+              <h2 className='text-3xl font-bold text-gray-800 mb-6'>
+                About This Service
+              </h2>
+              <div className='prose prose-lg max-w-none text-gray-600'>
+                <p>{service.fullDescription}</p>
+              </div>
+
+              <div className='mt-16'>
+                <h2 className='text-3xl font-bold text-gray-800 mb-8 flex items-center'>
+                  <span className='mr-3'>Service Gallery</span>
+                  <div className='h-px bg-gray-300 flex-grow mt-1'></div>
+                </h2>
+                <Gallery gallery={service.gallery} />
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Sidebar */}
+          <div className='lg:col-span-1'>
+            <div className='sticky top-8'>
+              <ServiceFeaturesCard features={service.features} />
+
+              <div className='bg-orange-50 rounded-xl p-8 border border-orange-100'>
+                <h3 className='text-xl font-bold text-orange-800 mb-4'>
+                  Need Help?
+                </h3>
+                <p className='text-gray-700 mb-6'>
+                  Have questions about our {service.name.toLowerCase()} service?
+                  Our experts are here to help.
+                </p>
+                <div className='flex justify-between space-x-4'>
+                  <Link
+                    href='/contact'
+                    className='flex-1 text-center py-2 px-4 border border-orange-400 text-orange-700 rounded-lg hover:bg-orange-100 transition-colors'
+                  >
+                    Contact Us
+                  </Link>
+                  <Link
+                    href='/faq'
+                    className='flex-1 text-center py-2 px-4 border border-orange-400 text-orange-700 rounded-lg hover:bg-orange-100 transition-colors'
+                  >
+                    View FAQ
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Services */}
+      <RelatedServices
+        currentServiceId={service.id}
+        services={services}
+      />
+
+      {/* Call to Action */}
+      <ServiceCTA serviceName={service.name} />
     </div>
   );
 }
 
 async function getServiceData(id: string) {
   const service = getServiceByID(id);
-
   if (!service) return null;
 
-  // get gallery Images from service's folder
-  // const galleryFolderPath = `${service.folderPath}/gallery`;
   const galleryImages = await getImagesByTag(service.galleryTag);
-
-  console.log(galleryImages);
-  // Process service data with cldnry images
   return processServiceData(service, galleryImages);
 }
 

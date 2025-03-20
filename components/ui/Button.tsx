@@ -15,7 +15,7 @@ export default function Button({
   return (
     <Link href={link}>
       <button
-        className={`shadow-lg bg-[#FF8106] text-white font-bold px-6 ${py} rounded-lg hover:bg-[#ff7206] hover:scale-105 transition duration-300`}
+        className={`w-full shadow-lg bg-[#FF8106] text-white font-bold px-6 ${py} rounded-lg hover:bg-[#ff7206] hover:scale-105 transition duration-300`}
       >
         {text}
       </button>
