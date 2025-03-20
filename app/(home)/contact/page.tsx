@@ -1,15 +1,16 @@
 "use client";
 
 import ContactForm from "@/components/home/ContactForm";
+import { getCloudinaryImageData } from "@/lib/actions/actions";
 import React from "react";
 
 export default function ContactPage() {
+  const contactBgImage = getCloudinaryImageData("contact-bg-image-public-id");
   return (
     <section
       className='relative w-full h-screen flex items-center justify-center py-16 px-4 bg-cover bg-center overflow-hidden'
       style={{
-        backgroundImage: `url(/assets/Izzys/IZZY20.webp)`,
-        // height: "calc(100vh - 10rem)", // Adjust 4rem to your navbar's height
+        backgroundImage: `url(${contactBgImage.src})`,
       }}
     >
       {/* Overlay */}

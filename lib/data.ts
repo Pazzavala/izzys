@@ -135,7 +135,7 @@ export const services: ServiceBase[] = [
   {
     id: "landscaping",
     name: "Landscaping",
-    mainImageId: "landscaping/landscaping/main",
+    mainImageId: "landscaping-landscaping-main",
     galleryTag: "landscaping",
     description:
       "Transform your outdoor space with our expert landscaping services.",

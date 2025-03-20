@@ -34,25 +34,20 @@ export const getServiceByID = (id: string): ServiceBase | undefined => {
 // Get cldnry img URL and blur data for specific path
 export const getCloudinaryImageData = (
   public_id: string,
-  width: number,
-  height: number,
-  key?: string,
+  width: number = 1800,
+  height: number = 1200,
   alt?: string
 ): CloudinaryImageData => {
   const img = cld.image(public_id);
   img.resize(fill().width(width).height(height));
 
-  // const blurImg = cld.image(public_id);
-  // blurImg.resize(fill().width(20).height(20));
-
   if (!img) throw new Error(`Image data not found for public_id: ${public_id}`);
 
   return {
     src: img.toURL(),
-    // blurDataUrl: blurImg.toURL(),
     width,
     height,
-    key: key ?? public_id,
+    key: public_id,
     alt: alt ?? public_id,
   };
 };
@@ -99,6 +94,22 @@ export const getImagesByTag = async (
   }
 };
 
+export const processServiceData = (
+  service: ServiceBase,
+  galleryImages?: CloudinaryImageData[]
+): Service => {
+  const { src } = getCloudinaryImageData(service.mainImageId, 800, 600);
+
+  if (!galleryImages) galleryImages = [];
+
+  return {
+    ...service,
+    src,
+    gallery: galleryImages,
+  };
+};
+
+// Probably wont use
 // Get all images from a folder in cldnry
 export const getImagesFromFolder = async (
   folderPath: string
@@ -133,19 +144,4 @@ export const getImagesFromFolder = async (
     console.error("Error fetching images from Cloudinary folder:", error);
     return [];
   }
-};
-
-export const processServiceData = (
-  service: ServiceBase,
-  galleryImages?: CloudinaryImageData[]
-): Service => {
-  const { src } = getCloudinaryImageData(service.mainImageId, 800, 600);
-
-  if (!galleryImages) galleryImages = [];
-
-  return {
-    ...service,
-    src,
-    gallery: galleryImages,
-  };
 };

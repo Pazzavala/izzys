@@ -122,6 +122,7 @@ export default function MobileMenu() {
           {/* Button */}
           <div className='mt-4 mb-8'>
             <Button
+              link='tel:6129789411'
               text='(612) 978-9411'
               py={"py-[.35rem]"}
             />

@@ -1,13 +1,9 @@
-import Image from "next/image";
-// import AboutUsHero1 from "@/public/assets/izzy_banner.jpg";
-import AboutUsHero2 from "@/public/assets/izzy_banner.jpg";
-// import AboutUsHero3 from "@/public/assets/izzy_banner.jpg";
+// import Image from "next/image";
 
 export default function MobileView() {
   return (
     <div className='w-full max-w-[1350px] mx-auto px-4 sm:px-8 lg:px-12 mb-10 mt-16 lg:mt-28 flex flex-col '>
       <div className='flex flex-col mt-16 mb-6 sm:mb-14 justify-center items-center'>
-        {/* About Us Title */}
         <h1 className='text-4xl md:text-4xl lg:text-5xl mb-6 text-center font-bold font-montserrat tracking-tight text-[#FF8106]/95'>
           About Us
         </h1>

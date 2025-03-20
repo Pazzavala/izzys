@@ -32,12 +32,12 @@ export default function Footer() {
                 >
                   <contact.icon />
                   <p className='text-sm'>
-                    <a
+                    <Link
                       href={contact.url}
                       className='hover:text-[#FF8106] transition-colors'
                     >
                       {contact.content}
-                    </a>
+                    </Link>
                   </p>
                 </div>
               ))}
@@ -73,17 +73,20 @@ export default function Footer() {
                 <h4 className='font-semibold text-[#FF8106] mb-3'>Services</h4>
                 <div className='text-sm grid grid-cols-1 gap-2'>
                   {shortServiceList.map((service) => (
-                    <a
+                    <Link
                       key={service.id}
-                      href={service.id}
+                      href={`/services/${service.id}`}
                       className=' hover:text-[#FF8106] transition-colors'
                     >
                       {service.name}
-                    </a>
+                    </Link>
                   ))}
-                  <p className='text-orange-300 hover:text-[#FF8106]'>
+                  <Link
+                    href={"/services"}
+                    className='text-[#FF8106]/60 hover:text-[#FF8106]'
+                  >
                     See More...
-                  </p>
+                  </Link>
                 </div>
               </div>
 
@@ -100,19 +103,19 @@ export default function Footer() {
                     >
                       <contact.icon />
                       <p className='text-sm'>
-                        <a
+                        <Link
                           href={contact.url}
                           className='hover:text-[#FF8106] transition-colors'
                         >
                           {contact.content}
-                        </a>
+                        </Link>
                       </p>
                     </div>
                   ))}
                 </div>
                 <div className='flex space-x-4'>
                   {socials.map((social) => (
-                    <a
+                    <Link
                       key={social.name}
                       href={social.url}
                       target='_blank'
@@ -120,7 +123,7 @@ export default function Footer() {
                       className='text-gray-700 hover:text-[#FF8106] transition-colors'
                     >
                       <social.icon className='text-2xl' />
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -130,7 +133,7 @@ export default function Footer() {
             <div className='sm:hidden flex flex-col items-center justify-center mt-6'>
               <div className='flex justify-center space-x-4'>
                 {socials.map((social) => (
-                  <a
+                  <Link
                     key={social.name}
                     href={social.url}
                     target='_blank'
@@ -138,7 +141,7 @@ export default function Footer() {
                     className=' text-gray-700 hover:text-[#FF8106] transition-colors'
                   >
                     <social.icon className='bg-white text-3xl' />
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

@@ -32,12 +32,12 @@ export default function ServicesSection() {
         <ServiceCard showAmount={6} />
 
         {/* See all Services Section */}
-        <Link
-          href={"/services"}
-          className='h-24 flex items-center justify-center'
-        >
-          <Button text='See More Services' />
-        </Link>
+        <div className='h-24 flex items-center justify-center'>
+          <Button
+            link='/services'
+            text='See More Services'
+          />
+        </div>
       </div>
     </section>
   );

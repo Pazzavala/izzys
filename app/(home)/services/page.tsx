@@ -1,7 +1,5 @@
 import React from "react";
 // import Image from "next/image";
-// import ServiceHero1 from "@/public/assets/service half 1.jpg";
-// import ServiceHero2 from "@/public/assets/service half 2.jpg";
 import ServiceCard from "@/components/home/ServiceCard";
 
 export default function LandscapingServicesPage() {
@@ -9,7 +7,6 @@ export default function LandscapingServicesPage() {
     <div className='w-full max-w-[1350px] mx-auto px-4 sm:px-8 lg:px-12 mb-10 mt-16 lg:mt-28 flex flex-col '>
       <div className='flex flex-col mt-16 mb-6 sm:mb-14 justify-center items-center'>
         <div className='container'>
-          {/* About Us Title */}
           <h1 className='text-4xl md:text-4xl lg:text-5xl mb-6 text-center font-bold font-montserrat tracking-tight text-[#FF8106]/95'>
             Our Services
           </h1>
