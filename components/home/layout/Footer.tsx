@@ -1,4 +1,4 @@
-import IzzysLogo from "@/public/assets/izzy_banner.png";
+import IzzysLogo from "@/public/assets/izzy_banner.jpg";
 import React from "react";
 import Image from "next/image";
 import { contactInfo, navLinks, services, socials } from "@/lib/data";
@@ -19,7 +19,7 @@ export default function Footer() {
                 alt="Izzy's Logo"
                 width={270}
                 height={100}
-                className='object-contain mb-5 border border-orange-500 rounded-md'
+                className='object-contain mb-5 rounded-md'
               />
             </Link>
 

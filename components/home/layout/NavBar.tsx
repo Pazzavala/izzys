@@ -1,7 +1,7 @@
 import React from "react";
 import { navLinks, socials } from "@/lib/data";
 import Image from "next/image";
-import IzzysLogo from "@/public/assets/izzy_banner.png";
+import IzzysLogo from "@/public/assets/izzy_banner.jpg";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
 

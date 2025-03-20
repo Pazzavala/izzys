@@ -6,10 +6,10 @@ import React from "react";
 export default function ContactPage() {
   return (
     <section
-      className='relative w-full flex items-center justify-center py-16 px-4 bg-cover bg-center overflow-hidden'
+      className='relative w-full h-screen flex items-center justify-center py-16 px-4 bg-cover bg-center overflow-hidden'
       style={{
         backgroundImage: `url(/assets/Izzys/IZZY20.webp)`,
-        height: "calc(100vh - 10rem)", // Adjust 4rem to your navbar's height
+        // height: "calc(100vh - 10rem)", // Adjust 4rem to your navbar's height
       }}
     >
       {/* Overlay */}

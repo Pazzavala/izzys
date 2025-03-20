@@ -1,7 +1,7 @@
 import Image from "next/image";
-import AboutUsHero1 from "@/public/assets/izzy_banner.jpg";
+// import AboutUsHero1 from "@/public/assets/izzy_banner.jpg";
 import AboutUsHero2 from "@/public/assets/izzy_banner.jpg";
-import AboutUsHero3 from "@/public/assets/izzy_banner.jpg";
+// import AboutUsHero3 from "@/public/assets/izzy_banner.jpg";
 
 export default function MobileView() {
   return (
@@ -16,7 +16,7 @@ export default function MobileView() {
         {/* Left Image - Ensuring consistent height */}
         <div className='relative w-full h-[450px]'>
           <Image
-            src={AboutUsHero1}
+            src={AboutUsHero2}
             alt='Landscaping example 1'
             className='rounded-lg object-cover'
             fill
@@ -36,7 +36,7 @@ export default function MobileView() {
         {/* Right Image - Ensuring consistent height */}
         <div className='relative w-full h-[450px]'>
           <Image
-            src={AboutUsHero3}
+            src={AboutUsHero2}
             alt='Landscaping example 3'
             className='rounded-lg object-cover'
             fill

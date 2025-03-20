@@ -1,12 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import AboutUsHero1 from "@/public/assets/izzy_banner.jpg";
-import AboutUsHero3 from "@/public/assets/izzy_banner.jpg";
 import ServiceCard from "@/components/home/ServiceCard";
 
 export default function LandscapingServicesPage() {
   return (
-    <div className='w-full max-w-7xl mx-auto px-12 min-h-[50rem] flex flex-col '>
+    <div className='w-full max-w-7xl mx-auto px-12 pb-10 min-h-[50rem] flex flex-col '>
       <div className='flex flex-col lg:flex-row py-12'>
         <div className='container'>
           {/* About Us Title */}
@@ -23,9 +22,9 @@ export default function LandscapingServicesPage() {
         </div>
 
         {/* Triptych Image Grid - Consistent Alignment */}
-        <div className='grid grid-cols-2 gap-4 max-w-6xl w-full mt-12 lg:mt-10'>
+        <div className='grid grid-cols-2 gap-4 max-w-6xl w-full lg:mt-10'>
           {/* Left Image - Ensuring consistent height */}
-          <div className='relative w-full h-[450px]'>
+          <div className='relative w-full h-[200] sm:h-[450px'>
             <Image
               src={AboutUsHero1}
               alt='Landscaping example 1'
@@ -35,9 +34,9 @@ export default function LandscapingServicesPage() {
           </div>
 
           {/* Right Image - Ensuring consistent height */}
-          <div className='relative w-full h-[450px]'>
+          <div className='relative w-full h-[200] sm:h-[450px'>
             <Image
-              src={AboutUsHero3}
+              src={AboutUsHero1}
               alt='Landscaping example 3'
               className='rounded-lg object-cover'
               fill
