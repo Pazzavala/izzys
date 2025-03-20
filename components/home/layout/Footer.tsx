@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <footer className='bg-white text-gray-700 py-12 px-4 md:px-8'>
-      <div className='container w-full max-w-6xl mx-auto'>
+      <div className='container w-full max-w-7xl mx-auto'>
         <div className='flex flex-col md:flex-row'>
           {/* Logo and Contact Info */}
           <div className='flex flex-1 flex-col items-center md:items-start'>
@@ -127,7 +127,7 @@ export default function Footer() {
             </div>
 
             {/* Contact Info - Visible only on mobile */}
-            <div className='md:hidden flex flex-col items-center justify-center mt-6'>
+            <div className='sm:hidden flex flex-col items-center justify-center mt-6'>
               <div className='flex justify-center space-x-4'>
                 {socials.map((social) => (
                   <a

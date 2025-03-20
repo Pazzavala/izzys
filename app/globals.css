@@ -5,6 +5,8 @@
   --font-mono: var(--font-geist-mono);
   --font-caladea: var(--font-caladea);
   --font-bodoni_moda: var(--font-bodoni_moda);
+  --font-montserrat: var(--font-montserrat);
+  --font-domine: var(--font-domine);
 }
 
 :root {

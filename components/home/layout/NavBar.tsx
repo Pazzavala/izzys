@@ -7,24 +7,24 @@ import Link from "next/link";
 
 export default function NavBar() {
   return (
-    <nav className='bg-white text-gray-700 shadow-md'>
-      <div className='mx-auto px-4 md:px-10'>
-        <div className='flex flex-col sm:flex-row justify-between items-center py-5'>
+    <nav className='fixed top-0 left-0 right-0 bg-white text-gray-700 shadow-md z-50'>
+      <div className='mx-auto px-4 md:px-10 shadow-md'>
+        <div className='flex flex-col md:flex-row justify-between items-center py-5'>
           {/* Logo */}
-          <div className='mb-4 sm:mb-0'>
+          <div className='mb-4 md:mb-0'>
             <Link href={"/"}>
               <Image
                 src={IzzysLogo}
                 alt='Izzys Landscaping and Construction'
                 width={200}
                 height={100}
-                className='w-48 sm:w-52'
+                className='w-48 md:w-52'
               />
             </Link>
           </div>
 
           {/* Navigation Links */}
-          <div className='hidden sm:flex flex-wrap justify-end items-center gap-4 sm:gap-8 md:gap-14 lg:gap-20 mb-4 sm:mb-0'>
+          <div className='hidden lg:flex flex-wrap justify-end items-center lg:gap-12 xl:gap-16 mb-4 md:mb-0'>
             {navLinks.map((navLink) => (
               <Link
                 key={navLink.name}
