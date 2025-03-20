@@ -5,7 +5,7 @@ import { metrics } from "@/lib/data";
 
 export default function AboutSection() {
   return (
-    <section className='w-full py-20 bg-[#fc9c3b] flex flex-col items-center justify-center text-white text-center'>
+    <section className='w-full py-20 bg-[#FF8106]/95 flex flex-col items-center justify-center text-white text-center'>
       <div className='container mx-auto px-4 md:px-6 lg:px-8'>
         <h2
           className='

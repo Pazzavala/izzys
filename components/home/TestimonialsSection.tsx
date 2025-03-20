@@ -7,7 +7,7 @@ export default function TestimonialsSection() {
       className='
       py-16 
       w-full 
-      bg-[#fc9c3b] 
+      bg-[#FF8106]/95
       text-white
     '
     >
