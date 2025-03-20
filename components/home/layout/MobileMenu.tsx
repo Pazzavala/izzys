@@ -1,12 +1,10 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { navLinks, socials } from "@/lib/data";
-import Button from "@/components/ui/Button";
 import Image from "next/image";
-import IzzysLogo from "@/public/assets/izzy_banner.jpg";
 import Link from "next/link";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { navLinks, contactAndSocials } from "@/lib/data";
+import IzzysLogo from "@/public/assets/izzy_banner.jpg";
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -99,7 +97,7 @@ export default function MobileMenu() {
 
           {/* Social Icons */}
           <div className='flex gap-7 mt-4'>
-            {socials.map((social) => (
+            {contactAndSocials.map((social) => (
               <Link
                 key={social.name}
                 href={social.url}
@@ -114,15 +112,6 @@ export default function MobileMenu() {
                 />
               </Link>
             ))}
-          </div>
-
-          {/* Button */}
-          <div className='mt-4 mb-8'>
-            <Button
-              link='tel:6129789411'
-              text='(612) 978-9411'
-              py={"py-[.35rem]"}
-            />
           </div>
         </div>
       </div>
