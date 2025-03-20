@@ -1,55 +1,84 @@
 import React from "react";
-// import Image from "next/image";
+import Link from "next/link";
+import Image from "next/image";
 import ServiceCard from "@/components/home/ServiceCard";
+import { getCloudinaryImageData } from "@/lib/actions/actions";
 
-export default function LandscapingServicesPage() {
+export default async function LandscapingServicesPage() {
+  const heroImage = await getCloudinaryImageData(
+    "about-hero",
+    1920,
+    800,
+    "about-page"
+  );
   return (
-    <div className='w-full max-w-[1350px] mx-auto px-4 sm:px-8 lg:px-12 mb-10 mt-16 lg:mt-28 flex flex-col '>
-      <div className='flex flex-col mt-16 mb-6 sm:mb-14 justify-center items-center'>
-        <div className='container'>
-          <h1 className='text-4xl md:text-4xl lg:text-5xl mb-6 text-center font-bold font-montserrat tracking-tight text-[#FF8106]/95'>
-            Our Services
-          </h1>
-          {/* Description Text */}
-          <p className='text-center text-gray-600 text-sm lg:text-base font-light leading-relaxed tracking-wide'>
-            Izzy&apos;s Landscaping is dedicated to creating beautiful,
-            high-quality outdoor spaces across Minnesota. From lush gardens to
-            durable hardscapes, we bring expert craftsmanship and attention to
-            detail.
-          </p>
+    <div className='bg-white'>
+      {/* Hero Section */}
+      <div className='relative h-[500px] w-full'>
+        <Image
+          src={heroImage}
+          alt='Landscaping Services'
+          className='object-cover'
+          priority
+          fill
+        />
+        <div className='absolute inset-0 bg-black/50'>
+          <div className='container mx-auto px-4 h-full flex flex-col justify-center'>
+            <div className='max-w-3xl'>
+              <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6'>
+                Our Services
+              </h1>
+              <p className='text-lg text-gray-100 max-w-2xl'>
+                Izzy&apos;s Landscaping is dedicated to creating beautiful,
+                high-quality outdoor spaces across Minnesota. From lush gardens
+                to durable hardscapes, we bring expert craftsmanship and
+                attention to detail.
+              </p>
+            </div>
+          </div>
         </div>
-
-        {/* Triptych Image Grid - Consistent Alignment */}
-
-        {/* <div className='grid grid-cols-2 gap-4 max-w-6xl w-full mt-20 sm:mt-10 lg:mt-10'>
-          <div className='relative w-full h-[200] sm:h-[450px]'>
-            <Image
-              src={ServiceHero1}
-              alt='Landscaping example 1'
-              className='rounded-lg object-cover'
-              fill
-            />
-          </div>
-
-          <div className='relative w-full h-[200] sm:h-[450px]'>
-            <Image
-              src={ServiceHero2}
-              alt='Landscaping example 3'
-              className='rounded-lg object-cover'
-              fill
-            />
-          </div>
-        </div> */}
       </div>
 
-      <ServiceCard />
+      {/* Services Grid */}
+      <div className='container mx-auto px-4 py-16'>
+        <div className='mb-12'>
+          <h2 className='text-3xl font-bold text-gray-800 mb-8 flex items-center'>
+            <span className='mr-3'>Landscaping Services</span>
+            <div className='h-px bg-gray-300 flex-grow mt-1'></div>
+          </h2>
+        </div>
+
+        {/* ServiceCard component will render the grid of services */}
+        <ServiceCard showAmount={0} />
+      </div>
+
+      {/* Call to Action */}
+      <div className='bg-gray-50 py-16'>
+        <div className='container mx-auto px-4'>
+          <div className='bg-white rounded-xl p-8 border border-gray-200 shadow-lg max-w-4xl mx-auto text-center'>
+            <h2 className='text-3xl font-bold text-gray-800 mb-4'>
+              Ready to Transform Your Outdoor Space?
+            </h2>
+            <p className='text-gray-600 mb-8 max-w-2xl mx-auto'>
+              Contact us today for a free consultation and estimate on any of
+              our professional landscaping services.
+            </p>
+            <Link
+              href='/contact'
+              className='inline-block px-8 py-3 bg-[#FF8106] text-white font-medium rounded-lg hover:bg-orange-600 transition-colors'
+            >
+              Get a Free Quote
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
 // Add metadata for improved SEO
 export const metadata = {
-  title: "Our Landscaping Services",
+  title: "Our Landscaping Services | Izzy's Landscaping",
   description:
-    "Explore our full range of professional landscaping services for your home or business",
+    "Explore our full range of professional landscaping services for your home or business in Minnesota.",
 };
