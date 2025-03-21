@@ -13,20 +13,20 @@ async function getStaticImages() {
     1200
   );
 
-  const heroImage = getCloudinaryImageData("hero-image-public-id", 2000, 1334);
+  // const heroImage = getCloudinaryImageData("hero-image-public-id", 2000, 1334);
 
   return {
     contactImage,
-    heroImage,
+    // heroImage,
   };
 }
 
 export default async function RootPage() {
-  const { contactImage, heroImage } = await getStaticImages();
+  const { contactImage } = await getStaticImages();
 
   return (
     <div className='flex flex-col'>
-      <HeroSection {...heroImage} />
+      <HeroSection />
       <AboutSection />
       <ServicesSection />
       <TestimonialsSection />

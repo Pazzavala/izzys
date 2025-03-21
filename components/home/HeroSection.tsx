@@ -1,26 +1,45 @@
-import Image from "next/image";
 import Button from "../ui/Button";
 
-interface HeroSectionProps {
-  src: string;
-  width: number;
-  height: number;
-  alt?: string;
-}
+// interface HeroSectionProps {
+//   src: string;
+//   width: number;
+//   height: number;
+//   alt?: string;
+// }
 
-export default function HeroSection({ src, alt }: Readonly<HeroSectionProps>) {
+const cloudName = process.env.CLOUDINARY_CLOUD_NAME;
+
+export default function HeroSection() {
+  const resourceType = "video";
+  const transformations = "f_auto,q_auto,w_1800";
+  const publicId = "Hero-Video_v14le4";
+  const videoUrl = `https://res.cloudinary.com/${cloudName}/${resourceType}/upload/${transformations}/${publicId}.mp4`;
+
   return (
     // min-h-[65vh] md:min-h-[70vh] xl:min-h-[80vh]
     <section className='w-full h-screen flex items-center justify-center py-16 px-4 bg-cover bg-center relative'>
-      <Image
+      {/* <Image
         src={src}
         alt={alt ?? "hero section"}
         fill
         priority
         className='object-cover'
-      />
+      /> */}
+
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className='absolute inset-0 w-full h-full object-cover'
+      >
+        <source
+          src={videoUrl}
+          type='video/mp4'
+        />
+      </video>
       {/* Dark overlay */}
-      <div className='absolute inset-0 bg-black/50' />
+      <div className='absolute inset-0 bg-black/60' />
 
       {/* Content container */}
       <div className='relative flex flex-col items-center z-10 container mx-auto max-w-4xl text-center text-white px-6'>
