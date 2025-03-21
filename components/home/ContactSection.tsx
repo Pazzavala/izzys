@@ -31,10 +31,10 @@ export default function ContactSection({
       <div className='relative container mx-auto px-4 md:px-6 lg:px-8 flex flex-col-reverse lg:flex-row gap-10 md:gap-20 z-10 items-center justify-center'>
         {/* Text and Form Section */}
         <div className='flex flex-col gap-8 text-center lg:text-left items-center lg:items-start'>
-          <h3 className='text-2xl sm:text-3xl lg:text-4xl font-caladea font-bold text-white text-wrap w-lg'>
+          <h3 className='text-2xl sm:text-3xl lg:text-4xl font-caladea font-bold text-white text-wrap md:w-lg'>
             Ready To Transform Your Outdoor Space?
           </h3>
-          <ContactForm /> {/* Replace the Button with the ContactForm */}
+          <ContactForm /> Replace the Button with the ContactForm
         </div>
 
         {/* Image Section */}
