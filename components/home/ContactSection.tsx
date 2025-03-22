@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import ContactForm from "./ContactForm";
+import ContactForm from "../ui/ContactForm";
 import Image from "next/image";
 import IzzyBanner from "@/public/assets/izzy_banner.jpg";
 

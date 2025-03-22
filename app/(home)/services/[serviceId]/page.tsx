@@ -164,10 +164,7 @@ export default async function ServicePage({ params }: Readonly<PageProps>) {
       </div>
 
       {/* Related Services */}
-      <RelatedServices
-        currentServiceId={service.id}
-        services={services}
-      />
+      <RelatedServices currentServiceId={service.id} />
 
       {/* Call to Action */}
       <ServiceCTA serviceName={service.name} />

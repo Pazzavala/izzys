@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import ContactForm from "@/components/home/ContactForm";
+import ContactForm from "@/components/ui/ContactForm";
 import { getCloudinaryImageData } from "@/lib/actions/actions";
 
 // This will run at build time for static generation

@@ -2,7 +2,7 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { contactAndSocials } from "@/lib/data";
 import Link from "next/link";
-import Button from "../ui/Button";
+import Button from "./Button";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({

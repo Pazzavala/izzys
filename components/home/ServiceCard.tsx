@@ -6,6 +6,7 @@ import { services } from "@/lib/data";
 
 interface ServiceCardProps {
   showAmount?: number;
+  filterOut?: string;
 }
 
 async function getServicesData() {
@@ -14,34 +15,44 @@ async function getServicesData() {
 
 export default async function ServiceCard({
   showAmount,
+  filterOut,
 }: Readonly<ServiceCardProps>) {
-  const servicesWithImages = await getServicesData();
+  let servicesWithImages = await getServicesData();
 
+  if (filterOut) {
+    servicesWithImages = servicesWithImages.filter(
+      (service) => service.id !== filterOut
+    );
+  }
   const displayedServices = showAmount
     ? servicesWithImages.slice(0, showAmount)
     : servicesWithImages;
 
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
       {displayedServices.map((service) => (
         <Link
-          key={service.id}
           href={`/services/${service.id}`}
-          className='border border-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition'
+          key={service.id}
+          className='group'
         >
-          <div className='relative h-64 w-full'>
-            <Image
-              src={service.src}
-              alt={service.name}
-              fill
-              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-              className='object-cover'
-            />
-          </div>
-          <div className='p-4'>
-            <h5 className='mb-2 text-gray-700'>{service.name}</h5>
-            <p className='text-gray-600'>{service.description}</p>
-            <div className='mt-3 text-blue-600 font-medium'>Learn more</div>
+          <div className='bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow'>
+            <div className='relative h-64'>
+              <Image
+                src={service.src}
+                alt={service.name}
+                className='object-cover group-hover:scale-105 transition-transform duration-300'
+                fill
+              />
+            </div>
+            <div className='p-6'>
+              <h5 className='text-gray-800 mb-2 group-hover:text-[#FF8106] transition-colors'>
+                {service.name}
+              </h5>
+              <p className='text-gray-600 line-clamp-2'>
+                {service.description}
+              </p>
+            </div>
           </div>
         </Link>
       ))}
