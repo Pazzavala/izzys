@@ -39,9 +39,7 @@ export default async function ServiceCard({
             />
           </div>
           <div className='p-4'>
-            <h2 className='text-xl font-semibold mb-2 text-gray-700'>
-              {service.name}
-            </h2>
+            <h5 className='mb-2 text-gray-700'>{service.name}</h5>
             <p className='text-gray-600'>{service.description}</p>
             <div className='mt-3 text-blue-600 font-medium'>Learn more</div>
           </div>

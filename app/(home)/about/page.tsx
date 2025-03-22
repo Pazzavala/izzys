@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { getCloudinaryImageData } from "@/lib/actions/actions";
-import AboutTestimonials from "@/components/home/about/AboutTestimonials";
+import AboutTestimonials from "@/components/about/AboutTestimonials";
 // import MeetTeamSeaction from "@/components/home/about/MeetTeamSeaction";
 // import WhyChooseUsSection from "@/components/home/about/WhyChooseUsSection";
 
@@ -35,9 +35,7 @@ export default async function AboutPage() {
         <div className='absolute inset-0 bg-black/50'>
           <div className='container mx-auto px-4 h-full flex flex-col justify-center'>
             <div className='max-w-3xl'>
-              <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6'>
-                About Our Company
-              </h1>
+              <h2 className='text-white mb-6'>About Our Company</h2>
               <p className='text-xl text-gray-100 max-w-2xl'>
                 We&apos;ve been creating beautiful outdoor spaces for over 20
                 years with a focus on sustainability and quality.
@@ -51,10 +49,10 @@ export default async function AboutPage() {
       <div className='container mx-auto px-4 py-16'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 items-center'>
           <div>
-            <h2 className='text-3xl font-bold text-gray-800 mb-6'>Our Story</h2>
+            <h3 className='mb-6'>Our Story</h3>
             <div className='prose prose-lg text-gray-600'>
               <p>
-                Founded in 2002, our journey began with a simple vision: to
+                Founded in 2013, our journey began with a simple vision: to
                 transform outdoor spaces into beautiful, functional environments
                 that enhance people&apos;s lives.
               </p>
@@ -87,9 +85,7 @@ export default async function AboutPage() {
       {/* Our Values Section */}
       <div className='bg-gray-50 py-16'>
         <div className='container mx-auto px-4'>
-          <h2 className='text-3xl font-bold text-gray-800 mb-12 text-center'>
-            Our Core Values
-          </h2>
+          <h3 className='mb-12 text-center'>Our Core Values</h3>
           <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
             <div className='bg-white p-8 rounded-xl shadow-sm text-center'>
               <div className='bg-[#FF8106]/30 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-6'>
@@ -108,7 +104,7 @@ export default async function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className='text-xl font-bold text-gray-800 mb-4'>Quality</h3>
+              <h5 className='text-gray-800 mb-4'>Quality</h5>
               <p className='text-gray-600'>
                 We never compromise on quality, using only the finest materials
                 and plants to ensure lasting beauty and durability.
@@ -137,9 +133,7 @@ export default async function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className='text-xl font-bold text-gray-800 mb-4'>
-                Sustainability
-              </h3>
+              <h5 className='text-gray-800 mb-4'>Sustainability</h5>
               <p className='text-gray-600'>
                 We&apos;re committed to eco-friendly practices that conserve
                 water, promote biodiversity, and create healthy environments.
@@ -162,9 +156,7 @@ export default async function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className='text-xl font-bold text-gray-800 mb-4'>
-                Customer Focus
-              </h3>
+              <h5 className='text-gray-800 mb-4'>Customer Focus</h5>
               <p className='text-gray-600'>
                 Every project begins with understanding your vision, needs, and
                 budget to deliver results that exceed expectations.
@@ -185,9 +177,9 @@ export default async function AboutPage() {
       {/* Call to Action */}
       <div className='bg-[#FF8106]/95 py-16'>
         <div className='container mx-auto px-4 text-center'>
-          <h2 className='text-3xl md:text-4xl font-bold text-white mb-6'>
+          <h3 className='custom-h3 text-white mb-6'>
             Ready to Transform Your Outdoor Space?
-          </h2>
+          </h3>
           <p className='text-green-100 max-w-2xl mx-auto mb-8'>
             Contact us today to schedule a consultation with one of our
             landscape design experts.

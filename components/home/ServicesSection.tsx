@@ -9,16 +9,7 @@ export default function ServicesSection() {
         {/* Header Section */}
         <div className='flex gap-3 flex-col md:flex-row justify-center items-center mb-12'>
           <div className='max-w-4xl text-[#FF8106] flex gap-3 flex-col justify-center items-center'>
-            <h2
-              className='
-              text-center 
-              text-3xl 
-              sm:text-4xl 
-              font-bold
-              font-caladea'
-            >
-              Our Services
-            </h2>
+            <h3 className='text-center'>Our Services</h3>
             <p className='text-center text-gray-600 text-base sm:text-lg font-medium'>
               Transform your outdoor space with our expert landscaping services,
               including design, installation, and maintenance for stunning,

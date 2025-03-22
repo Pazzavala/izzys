@@ -12,18 +12,7 @@ export default function TestimonialsSection() {
     '
     >
       <div className='container mx-auto px-4 md:px-6 lg:px-8'>
-        <h2
-          className='
-          text-center 
-          text-3xl 
-          sm:text-4xl 
-          font-bold
-          text-white
-          font-caladea
-        '
-        >
-          What Our Customers Say
-        </h2>
+        <h3 className='custom-h3 text-center'>What Our Customers Say</h3>
         <TestimonialsSlider />
       </div>
     </section>

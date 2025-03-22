@@ -9,9 +9,7 @@ export default function ServiceCTA({ serviceName }: Readonly<ServiceCTAProps>) {
   return (
     <div className='bg-[#FF8106]/95 text-white py-16'>
       <div className='container mx-auto px-4 text-center'>
-        <h2 className='text-3xl md:text-4xl font-bold mb-4'>
-          Ready to Get Started?
-        </h2>
+        <h3 className='custom-h3 font-bold mb-4'>Ready to Get Started?</h3>
         <p className='text-green-100 max-w-xl mx-auto mb-8'>
           Contact us today for a free consultation and quote on your{" "}
           {serviceName.toLowerCase()} project.

@@ -1,6 +1,6 @@
 import React from "react";
-import MobileMenu from "./layout/MobileMenu";
-import NavBar from "./layout/NavBar";
+import MobileMenu from "../layout/MobileMenu";
+import NavBar from "../layout/NavBar";
 
 export default function HeaderSection() {
   return (

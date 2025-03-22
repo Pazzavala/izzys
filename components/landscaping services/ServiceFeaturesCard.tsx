@@ -10,9 +10,7 @@ export default function ServiceFeaturesCard({
 }: Readonly<ServiceFeaturesCardProps>) {
   return (
     <div className='bg-gray-50 rounded-xl shadow-sm p-8 mb-8'>
-      <h3 className='text-2xl font-bold text-gray-800 mb-6'>
-        Service Features
-      </h3>
+      <h4 className='text-gray-800 mb-6'>Service Features</h4>
       <ul className='space-y-4 mb-8'>
         {features.map((feature) => (
           <li

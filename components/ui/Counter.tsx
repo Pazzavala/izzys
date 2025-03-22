@@ -1,7 +1,7 @@
-'use client';
-import React from 'react';
-import CountUp from 'react-countup';
-import { useInView } from 'react-intersection-observer';
+"use client";
+import React from "react";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
 interface CounterProps {
   end: number; // Target number to count up to
@@ -11,7 +11,7 @@ interface CounterProps {
 
 export default function Counter({
   end,
-  suffix = '',
+  suffix = "",
   duration = 2,
 }: Readonly<CounterProps>) {
   const { ref, inView } = useInView({

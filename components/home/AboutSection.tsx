@@ -7,18 +7,12 @@ export default function AboutSection() {
   return (
     <section className='w-full py-20 bg-[#FF8106]/95 flex flex-col items-center justify-center text-white text-center'>
       <div className='container mx-auto px-4 md:px-6 lg:px-8'>
-        <h2
+        <h3
           className='
-          text-center 
-          text-3xl 
-          sm:text-4xl 
-          font-bold
-          text-white
-          font-caladea
-          mb-12'
+          custom-h3 text-center mb-10'
         >
           Why Choose Us
-        </h2>
+        </h3>
 
         {/* Description */}
         <p className='text-base sm:text-lg font-medium leading-loose mb-12'>
@@ -37,7 +31,7 @@ export default function AboutSection() {
               key={metric.metric}
               className='metric-item'
             >
-              <h3 className='text-3xl md:text-4xl font-bold'>
+              <h3 className='custom-h3'>
                 <Counter
                   end={metric.target}
                   suffix='+'

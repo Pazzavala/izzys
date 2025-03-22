@@ -65,9 +65,9 @@ export default function TestimonialCard({
       '
     >
       <div className='flex items-center justify-center'>
-        <h4 className='font-medium pb-10'>
+        <p className='font-medium pb-10'>
           {clientName} | {location}
-        </h4>
+        </p>
       </div>
 
       <p className='text-center max-w-6xl sm:max-w-4xl mb-8 text-gray-600'>
@@ -102,19 +102,6 @@ export default function TestimonialCard({
   );
 }
 
-// Full Reviews Page Component
-export function FullReviewsPage() {
-  return (
-    <div className='container mx-auto px-4 py-12'>
-      <h1 className='text-3xl font-bold mb-8 text-center'>Customer Reviews</h1>
-      <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
-        {/* Map through all testimonials and render full reviews */}
-        {/* This would be populated dynamically from your testimonials data */}
-      </div>
-    </div>
-  );
-}
-
 // Optional: Review Modal Component (alternative to full page)
 export function ReviewModal({
   isOpen,
@@ -131,7 +118,7 @@ export function ReviewModal({
     <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
       <div className='bg-white p-8 rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto'>
         <div className='flex justify-between items-center mb-6'>
-          <h2 className='text-2xl font-bold'>{review.clientName}</h2>
+          <h4>{review.clientName}</h4>
           <button
             onClick={onClose}
             className='text-gray-600 hover:text-gray-800'

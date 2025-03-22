@@ -67,9 +67,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       className='flex flex-col gap-6 w-full max-w-md bg-white p-8 rounded-xl shadow-lg transform transition-all hover:shadow-xl text-gray-600 py-5'
     >
-      <h2 className='text-center text-gray-700 font-black text-xl'>
-        Contact Us
-      </h2>
+      <h5 className='text-center text-gray-700'>Contact Us</h5>
       {/* Name Input */}
       <div className='relative'>
         <label

@@ -8,9 +8,9 @@ import {
 } from "@/lib/actions/actions";
 import { services } from "@/lib/data";
 import Gallery from "@/components/ui/Gallery";
-import ServiceCTA from "@/components/home/service/ServiceCTA";
-import RelatedServices from "@/components/home/service/RelatedServices";
-import ServiceFeaturesCard from "@/components/home/service/ServiceFeaturesCard";
+import ServiceCTA from "@/components/landscaping services/ServiceCTA";
+import RelatedServices from "@/components/landscaping services/RelatedServices";
+import ServiceFeaturesCard from "@/components/landscaping services/ServiceFeaturesCard";
 
 interface PageProps {
   params: Promise<{
@@ -53,9 +53,7 @@ export default async function ServicePage({ params }: Readonly<PageProps>) {
               Return to Services
             </Link>
           </div>
-          <h1 className='text-4xl font-bold text-gray-800 mb-4'>
-            Service Not Found
-          </h1>
+          <h2 className='text-gray-800 mb-4'>Service Not Found</h2>
           <p className='text-gray-600 mb-6'>
             We couldn&apos;t find the service you&apos;re looking for.
           </p>
@@ -102,9 +100,7 @@ export default async function ServicePage({ params }: Readonly<PageProps>) {
                 </svg>
                 All Services
               </Link>
-              <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4'>
-                {service.name}
-              </h1>
+              <h2 className='text-white mb-4'>{service.name}</h2>
               <p className='text-lg text-gray-100 max-w-2xl'>
                 {service.description}
               </p>
@@ -119,18 +115,16 @@ export default async function ServicePage({ params }: Readonly<PageProps>) {
           {/* Left Column - Main Content */}
           <div className='lg:col-span-2'>
             <div className='bg-white rounded-xl'>
-              <h2 className='text-3xl font-bold text-gray-800 mb-6'>
-                About This Service
-              </h2>
+              <h3 className='mb-6'>About This Service</h3>
               <div className='prose prose-lg max-w-none text-gray-600'>
                 <p>{service.fullDescription}</p>
               </div>
 
               <div className='mt-16'>
-                <h2 className='text-3xl font-bold text-gray-800 mb-8 flex items-center'>
+                <h3 className='mb-8 flex items-center'>
                   <span className='mr-3'>Service Gallery</span>
                   <div className='h-px bg-gray-300 flex-grow mt-1'></div>
-                </h2>
+                </h3>
                 <Gallery gallery={service.gallery} />
               </div>
             </div>
@@ -142,9 +136,9 @@ export default async function ServicePage({ params }: Readonly<PageProps>) {
               <ServiceFeaturesCard features={service.features} />
 
               <div className='bg-orange-50 rounded-xl p-8 border border-orange-100'>
-                <h3 className='text-xl font-bold text-orange-800 mb-4'>
+                <p className='text-xl font-bold text-orange-800 mb-4'>
                   Need Help?
-                </h3>
+                </p>
                 <p className='text-gray-700 mb-6'>
                   Have questions about our {service.name.toLowerCase()} service?
                   Our experts are here to help.

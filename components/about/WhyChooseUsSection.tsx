@@ -9,7 +9,7 @@
 //       <div className='container mx-auto px-4'>
 //         <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 items-center'>
 //           <div>
-//             <h2 className='text-3xl font-bold mb-6'>Why Choose Us?</h2>
+//             <h3 className='text-white mb-6'>Why Choose Us?</h3>
 //             <ul className='space-y-4'>
 //               {[
 //                 "Over 20 years of industry experience",

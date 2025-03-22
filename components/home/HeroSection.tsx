@@ -12,7 +12,7 @@ const cloudName = process.env.CLOUDINARY_CLOUD_NAME;
 export default function HeroSection() {
   const resourceType = "video";
   const transformations = "f_auto,q_auto,w_1800";
-  const publicId = "Hero-Video_v14le4";
+  const publicId = "Hero-Video_mqayrs";
   const videoUrl = `https://res.cloudinary.com/${cloudName}/${resourceType}/upload/${transformations}/${publicId}.mp4`;
 
   return (
@@ -35,6 +35,7 @@ export default function HeroSection() {
       >
         <source
           src={videoUrl}
+          // src='/assets/My Movie zoom.mp4'
           type='video/mp4'
         />
       </video>
@@ -47,9 +48,7 @@ export default function HeroSection() {
           IZZYS
         </h1>
         {/* Headline */}
-        <h1 className='max-w-2xl text-4xl sm:text-6xl font-mono font-black leading-tight mb-20'>
-          Landscaping & Construction
-        </h1>
+        <h2 className='max-w-2xl mb-20'>Landscaping & Construction</h2>
 
         {/* CTA Button */}
         <Button
@@ -58,9 +57,9 @@ export default function HeroSection() {
         />
 
         {/* Subheading */}
-        <h3 className='text-xl sm:text-xl md:text-4xl mt-14'>
+        <p className='md:text-4xl mt-14 custom-h5'>
           Trusted Minnesota Landscaper For 20+ Years
-        </h3>
+        </p>
       </div>
     </section>
   );

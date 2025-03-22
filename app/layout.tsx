@@ -8,7 +8,7 @@ import {
   Domine,
 } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/home/layout/Footer";
+import Footer from "@/components/layout/Footer";
 import HeaderSection from "@/components/home/HeaderSection";
 
 const geistSans = Geist({

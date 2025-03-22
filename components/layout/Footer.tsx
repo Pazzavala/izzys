@@ -48,9 +48,7 @@ export default function Footer() {
             <div className='flex md:flex-row justify-between gap-10'>
               {/* Navigation Links */}
               <div className='flex-1'>
-                <h4 className=' font-semibold text-[#FF8106] mb-3'>
-                  Quick Links
-                </h4>
+                <p className='font-semibold mb-3'>Quick Links</p>
                 <div className='grid grid-cols-1 gap-2'>
                   {navLinks.map((navLink) => (
                     <Link
@@ -70,7 +68,7 @@ export default function Footer() {
 
               {/* Services Links */}
               <div className='flex-1'>
-                <h4 className='font-semibold text-[#FF8106] mb-3'>Services</h4>
+                <p className='font-semibold mb-3'>Services</p>
                 <div className='text-sm grid grid-cols-1 gap-2'>
                   {shortServiceList.map((service) => (
                     <Link
@@ -92,9 +90,7 @@ export default function Footer() {
 
               {/* Contact - Visible only on wide screens */}
               <div className='hidden md:flex flex-col'>
-                <h4 className='text-nowrap font-semibold text-[#FF8106] mb-3'>
-                  Contact Us
-                </h4>
+                <p className='text-nowrap font-semibold mb-3'>Contact Us</p>
                 <div className='text-center md:text-left space-y-2 mb-4'>
                   {contactInfo.map((contact) => (
                     <div
@@ -124,7 +120,7 @@ export default function Footer() {
                       className='text-gray-700 hover:text-[#FF8106] transition-colors'
                     >
                       <social.icon
-                        className='text-2xl'
+                        className='text-2xl font-bold'
                         aria-hidden
                       />
                     </Link>
