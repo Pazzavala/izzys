@@ -1,65 +1,74 @@
 "use client";
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { useState } from "react";
 import { contactAndSocials } from "@/lib/data";
 import Link from "next/link";
-import Button from "./Button";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     message: "",
   });
 
   // Function to format phone number
-  const formatPhoneNumber = (value: string) => {
-    // Remove all non-numeric characters
-    const cleaned = value.replace(/\D/g, "");
+  // const formatPhoneNumber = (value: string) => {
+  //   // Remove all non-numeric characters
+  //   const cleaned = value.replace(/\D/g, "");
 
-    // Apply formatting based on the length of the cleaned input
-    if (cleaned.length <= 3) {
-      return `(${cleaned}`;
-    } else if (cleaned.length <= 6) {
-      return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3)}`;
-    } else if (cleaned.length <= 10) {
-      return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)} - ${cleaned.slice(
-        6
-      )}`;
-    } else {
-      // Limit to 10 digits
-      return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)} - ${cleaned.slice(
-        6,
-        10
-      )}`;
-    }
-  };
+  //   // Apply formatting based on the length of the cleaned input
+  //   if (cleaned.length <= 3) {
+  //     return `(${cleaned}`;
+  //   } else if (cleaned.length <= 6) {
+  //     return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3)}`;
+  //   } else if (cleaned.length <= 10) {
+  //     return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)} - ${cleaned.slice(
+  //       6
+  //     )}`;
+  //   } else {
+  //     // Limit to 10 digits
+  //     return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)} - ${cleaned.slice(
+  //       6,
+  //       10
+  //     )}`;
+  //   }
+  // };
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-
-    // Apply phone number formatting if the field is 'phone'
-    if (name === "phone") {
-      const formattedPhone = formatPhoneNumber(value);
-      setFormData({
-        ...formData,
-        [name]: formattedPhone,
-      });
-    } else {
-      setFormData({
-        ...formData,
-        [name]: value,
-      });
-    }
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log("Form Data Submitted:", formData);
-    alert("Thank you for contacting us! We will get back to you soon.");
+
+    // Submit the form data to HubSpot
+    try {
+      const response = await fetch("/api/submit-to-hubspot", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Form submitted successfully!");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+        }); // Reset form
+      } else {
+        alert("Failed to submit form. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("An error occurred. Please try again.");
+    }
   };
 
   return (
@@ -68,24 +77,45 @@ const ContactForm = () => {
       className='flex flex-col gap-6 w-full max-w-md bg-white p-8 rounded-xl shadow-lg transform transition-all hover:shadow-xl text-gray-600 py-5'
     >
       <h5 className='text-center text-gray-700'>Contact Us</h5>
-      {/* Name Input */}
-      <div className='relative'>
-        <label
-          htmlFor='name-input'
-          className='absolute left-3 -top-2 bg-white px-1 text-sm text-gray-500'
-        >
-          Name
-        </label>
-        <input
-          type='text'
-          name='name'
-          id='name-input'
-          // placeholder='Your Name'
-          value={formData.name}
-          onChange={handleChange}
-          className='w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8106] focus:border-transparent transition-all'
-          required
-        />
+      <div className='flex gap-2'>
+        {/* First Name Input */}
+        <div className='relative'>
+          <label
+            htmlFor='first-name-input'
+            className='absolute left-3 -top-2 bg-white px-1 text-sm text-gray-500'
+          >
+            First Name
+          </label>
+          <input
+            type='text'
+            name='first-name'
+            id='first-name-input'
+            // placeholder='Your Name'
+            value={formData.firstName}
+            onChange={handleChange}
+            className='w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8106] focus:border-transparent transition-all'
+            required
+          />
+        </div>
+        {/* Last Name Input */}
+        <div className='relative'>
+          <label
+            htmlFor='last-name-input'
+            className='absolute left-3 -top-2 bg-white px-1 text-sm text-gray-500'
+          >
+            Last Name
+          </label>
+          <input
+            type='text'
+            name='last-name'
+            id='last-name-input'
+            // placeholder='Your Name'
+            value={formData.lastName}
+            onChange={handleChange}
+            className='w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8106] focus:border-transparent transition-all'
+            required
+          />
+        </div>
       </div>
 
       {/* Email Input */}
@@ -127,7 +157,7 @@ const ContactForm = () => {
         />
       </div>
 
-      {/* Message Textarea */}
+      {/* Message Textarea
       <div className='relative'>
         <label
           htmlFor='message-input'
@@ -145,20 +175,20 @@ const ContactForm = () => {
           rows={5}
           required
         />
-      </div>
+      </div> */}
 
       {/* Submit Button */}
-      {/* <button
+      <button
         type='submit'
         className='w-full bg-[#FF8106] hover:bg-[#FF9106] text-white font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-105 active:scale-95'
       >
         Send Message
-      </button> */}
+      </button>
 
-      <Button
+      {/* <Button
         link='submit'
         text='Send Message'
-      />
+      /> */}
 
       {/* Social Icons Section */}
       <div className='text-center mt-2'>

@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
-import ContactForm from "../ui/ContactForm";
 import Image from "next/image";
 import IzzyBanner from "@/public/assets/izzy_banner.jpg";
+import HubSpotForm from "../ui/HubspotForm";
+// import ContactForm from "../ui/ContactForm";
 
 interface ContactSectionProps {
   src: string;
@@ -34,7 +35,9 @@ export default function ContactSection({
           <h3 className='custom-h3 text-wrap md:w-lg'>
             Ready To Transform Your Outdoor Space?
           </h3>
-          <ContactForm />
+
+          <HubSpotForm />
+          {/* <ContactForm /> */}
         </div>
 
         {/* Image Section */}

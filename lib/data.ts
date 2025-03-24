@@ -124,123 +124,29 @@ export const services: ServiceBase[] = [
     fullDescription: `Our landscaping services include designing and creating beautiful outdoor spaces tailored to your preferences. From planting trees and shrubs to installing decorative elements, we bring your vision to life.`,
     features: [
       "Custom landscape design",
-      "Planting trees and shrubs",
+      "Tree and shrub planting",
       "Garden bed installation",
-      "Seasonal color updates",
-      "Outdoor space optimization",
-    ],
-  },
-  {
-    id: "hardscaping",
-    name: "Hardscaping",
-    mainImageId: "hardscaping-main",
-    galleryTag: "hardscaping",
-    description:
-      "Enhance your property with durable and stylish hardscaping solutions.",
-    fullDescription: `Our hardscaping services include the installation of patios, walkways, retaining walls, and other structural elements that add functionality and beauty to your outdoor space. We use high-quality materials to ensure longevity and aesthetic appeal.`,
-    features: [
-      "Patio installation",
-      "Walkway and pathway design",
-      "Retaining walls",
-      "Outdoor living spaces",
-      "Custom stonework",
-    ],
-  },
-  {
-    id: "stone-installations",
-    name: "Stone Installations",
-    mainImageId: "stone-installations-main",
-    galleryTag: "stone-installations",
-    description:
-      "Add natural beauty and durability to your landscape with stone installations.",
-    fullDescription: `Our stone installation services include flagstone, bluestone, boulder walls, and stone stairs. We create stunning walkways, patios, and structural elements that enhance the aesthetic and functionality of your outdoor space.`,
-    features: [
-      "Flagstone and bluestone walkways",
-      "Stone patios",
-      "Boulder walls",
-      "Stone stairs",
-      "Custom stone designs",
-      "Durable and low-maintenance",
-    ],
-  },
-  {
-    id: "walls-structures",
-    name: "Walls & Structures",
-    mainImageId: "walls-structures-main",
-    galleryTag: "walls-structures",
-    description:
-      "Build functional and beautiful walls and structures for your landscape.",
-    fullDescription: `Our walls and structures services include designing and constructing retaining walls, stone walls, and boulder walls that add both functionality and aesthetic appeal to your property. Whether for erosion control, decorative purposes, or structural support, we use high-quality materials and expert craftsmanship.`,
-    features: [
-      "Retaining walls for erosion control",
-      "Decorative stone walls",
-      "Boulder walls for a natural look",
-      "Custom designs to match your landscape",
-      "Durable and long-lasting construction",
-    ],
-  },
-  {
-    id: "lighting-drainage",
-    name: "Lighting & Drainage",
-    mainImageId: "lighting-drainage-main",
-    galleryTag: "lighting-drainage",
-    description:
-      "Illuminate and protect your property with professional lighting and drainage solutions.",
-    fullDescription: `We provide lighting solutions to enhance the beauty and safety of your outdoor spaces, as well as drainage systems to manage water runoff and prevent erosion.`,
-    features: [
-      "Pathway and accent lighting",
-      "Security lighting",
-      "French drains",
-      "Catch basins",
-      "Grading corrections",
-    ],
-  },
-  {
-    id: "lawn-garden-care",
-    name: "Lawn & Garden Care",
-    mainImageId: "lawn-garden-care-main",
-    galleryTag: "lawn-garden-care",
-    description:
-      "Maintain a lush, healthy lawn and garden with our expert care services.",
-    fullDescription: `Our lawn and garden care services include sod installation, mulching, edging, and planting to keep your outdoor space vibrant and well-maintained.`,
-    features: [
       "Sod installation",
       "Mulch installation",
       "Lawn edging",
-      "Tree and shrub planting",
-      "Seasonal maintenance",
     ],
   },
+
   {
-    id: "outdoor-living",
-    name: "Outdoor Living",
-    mainImageId: "outdoor-living-main",
-    galleryTag: "outdoor-living",
+    id: "patio-installation",
+    name: "Paver Patios",
+    mainImageId: "paver-patios-main",
+    galleryTag: "patios",
     description:
-      "Create the ultimate outdoor living experience with custom features.",
-    fullDescription: `Our outdoor living services include designing and building firepits, outdoor kitchens, and seating areas that transform your backyard into a functional and inviting space.`,
+      "Transform your backyard with a custom patio perfect for outdoor dining and entertaining.",
+    fullDescription:
+      "Our patio design and installation services create beautiful outdoor living spaces using premium materials like natural stone, pavers, flagstone, and bluestone. We craft patios that seamlessly extend your living space outdoors with attention to drainage, usability, and aesthetic appeal.",
     features: [
-      "Custom firepits",
-      "Outdoor kitchens",
-      "Seating and dining areas",
-      "Durable materials",
-      "Enhances outdoor ambiance",
-    ],
-  },
-  {
-    id: "excavation-site-prep",
-    name: "Excavation & Site Prep",
-    mainImageId: "excavation-site-prep-main",
-    galleryTag: "excavation-site-prep",
-    description:
-      "Prepare your property for construction or landscaping with professional excavation services.",
-    fullDescription: `Our excavation services include site preparation, trenching, and grading to ensure your property is ready for construction or landscaping projects. We use professional equipment for precise results.`,
-    features: [
-      "Site preparation",
-      "Trenching",
-      "Grading",
-      "Custom excavation plans",
-      "Professional equipment",
+      "Custom patio designs",
+      "Premium paver options",
+      "Natural stone installations",
+      "Built-in seating and features",
+      "Proper drainage solutions",
     ],
   },
   {
@@ -259,4 +165,197 @@ export const services: ServiceBase[] = [
       "Professional installation",
     ],
   },
+  {
+    id: "retaining-wall-installation",
+    name: "Retaining Walls and Boulder Walls",
+    mainImageId: "retaining-walls-main",
+    galleryTag: "retaining-walls",
+    description:
+      "Build functional and beautiful walls and structures for your landscape.",
+    fullDescription: `Our walls and structures services include designing and constructing retaining walls, stone walls, and boulder walls that add both functionality and aesthetic appeal to your property. Whether for erosion control, decorative purposes, or structural support, we use high-quality materials and expert craftsmanship.`,
+    features: [
+      "Erosion control solutions",
+      "Terraced garden walls",
+      "Natural stone options",
+      "Segmental block systems",
+      "Boulder wall construction",
+      "Proper drainage integration",
+    ],
+  },
+  {
+    id: "lighting-drainage",
+    name: "Outdoor Lighting Solutions",
+    mainImageId: "lighting-drainage-main",
+    galleryTag: "lighting-drainage",
+    description:
+      "Illuminate and protect your property with professional lighting and drainage solutions.",
+    fullDescription:
+      "Our outdoor lighting designs highlight your home's architecture, illuminate pathways for safety, and create evening ambiance in your outdoor spaces. We install energy-efficient LED systems for beauty, security, and functionality.",
+    features: [
+      "Pathway lighting",
+      "LED pathway lighting",
+      "Architectural accent lighting",
+      "Security lighting",
+      "French drains",
+      "Catch basins",
+      "Grading corrections",
+    ],
+  },
+  {
+    id: "fire-pit-outdoor-kitchen",
+    name: "Fire Pits & Outdoor Kitchens",
+    mainImageId: "firepits-main",
+    galleryTag: "outdoor-cooking",
+    description:
+      "Elevate your backyard BBQs with custom fire pits and fully-equipped outdoor kitchens—perfect for sizzling meals, relaxing nights, and enjoying time outdoors with friends and family.",
+    fullDescription:
+      "Our fire pit and outdoor kitchen installations create the ultimate backyard entertainment space. We design and build custom cooking and gathering areas using premium materials that withstand the elements while complementing your home's architecture. From simple fire pits to complete outdoor kitchens with grills, countertops, and storage, we bring indoor comfort to your outdoor space.",
+    features: [
+      "Custom fire pit designs",
+      "Built-in grill installations",
+      "Outdoor countertop spaces",
+      "Built-in seating options",
+      "Seating and dining areas",
+      "Natural stone construction",
+      "Weather-resistant materials",
+    ],
+  },
+  {
+    id: "drainage-solutions",
+    name: "Yard Drainage Solutions",
+    mainImageId: "drainage-main",
+    galleryTag: "drainage",
+    description:
+      "Solve water problems with expert drainage solutions that protect your home and landscape.",
+    fullDescription:
+      "Our professional drainage systems prevent water damage to your home's foundation, eliminate standing water, and protect your landscape investments. We design and install French drains, catch basins, dry creek beds, and other solutions for effective water management.",
+    features: [
+      "French drain installation",
+      "Catch basin systems",
+      "Dry creek bed construction",
+      "Landscape grading",
+      "Downspout extensions",
+      "Erosion control measures",
+    ],
+  },
+  {
+    id: "excavation-site-prep",
+    name: "Excavation & Site Prep",
+    mainImageId: "excavation-site-prep-main",
+    galleryTag: "excavation-site-prep",
+    description:
+      "Prepare your property for construction or landscaping with professional excavation services.",
+    fullDescription: `Our excavation services include site preparation, trenching, and grading to ensure your property is ready for construction or landscaping projects. We use professional equipment for precise results.`,
+    features: [
+      "Site preparation",
+      "Trenching",
+      "Grading",
+      "Custom excavation plans",
+      "Professional equipment",
+    ],
+  },
+  // {
+  //   id: "snow-removal-services",
+  //   name: "Snow Removal & Ice Management",
+  //   mainImageId: "snow-removal-main",
+  //   galleryTag: "snow-removal",
+  //   description:
+  //     "Reliable residential and commercial snow removal to keep your property safe and accessible all winter.",
+  //   fullDescription:
+  //     "Our comprehensive snow removal services include plowing, shoveling, salting, and ice management for homes and businesses. We provide prompt, dependable service during winter storms to ensure your property remains accessible and hazard-free.",
+  //   features: [
+  //     // "24/7 emergency snow removal",
+  //     "Commercial parking lot plowing",
+  //     "Residential driveway clearing",
+  //     "Sidewalk and entryway shoveling",
+  //     "Ice management and salt application",
+  //   ],
+  // },
+  // {
+  //   id: "stone-installations",
+  //   name: "Stone Installations",
+  //   mainImageId: "stone-installations-main",
+  //   galleryTag: "stone-installations",
+  //   description:
+  //     "Add natural beauty and durability to your landscape with stone installations.",
+  //   fullDescription: `Our stone installation services include flagstone, bluestone, boulder walls, and stone stairs. We create stunning walkways, patios, and structural elements that enhance the aesthetic and functionality of your outdoor space.`,
+  //   features: [
+  //     "Flagstone and bluestone walkways",
+  //     "Stone patios",
+  //     "Boulder walls",
+  //     "Stone stairs",
+  //     "Custom stone designs",
+  //     "Durable and low-maintenance",
+  //   ],
+  // },
+  // {
+  //   id: "commercial-landscaping",
+  //   name: "Commercial Landscaping Services",
+  //   mainImageId: "commercial-landscaping-main",
+  //   galleryTag: "commercial",
+  //   description: "Create attractive, low-maintenance landscapes for your business property.",
+  //   fullDescription: "Our commercial landscaping services enhance your business property's appearance, functionality, and value. We provide comprehensive design, installation, and maintenance tailored to commercial properties with attention to accessibility, safety, and curb appeal.",
+  //   features: [
+  //     "Commercial property design",
+  //     "Water-efficient landscaping",
+  //     "Seasonal color displays",
+  //     "Snow removal services",
+  //     "Regular maintenance programs",
+  //     "ADA-compliant pathways"
+  //   ],
+  // },
+  // {
+  //   id: "residential-landscape-design",
+  //   name: "Residential Landscape Design",
+  //   mainImageId: "residential-landscape-design-main",
+  //   galleryTag: "landscaping",
+  //   description:
+  //     "Create your dream yard with custom landscape design tailored to your home and lifestyle.",
+  //   fullDescription:
+  //     "Our professional landscape designers create beautiful, functional outdoor spaces that enhance your property value and reflect your personal style. We combine plants, features, and materials that thrive in our local climate while meeting your specific needs and budget.",
+  //   features: [
+  //     "Custom landscape design",
+  //     "Tree and shrub planting",
+  //     "Garden bed installation",
+  //     "Sod installation",
+  //     "Mulch installation",
+  //     "Lawn edging",
+  //   ],
+  // },
+  // {
+  //   id: "deck-construction",
+  //   name: "Custom Deck Construction",
+  //   mainImageId: "deck-construction-main",
+  //   galleryTag: "decks",
+  //   description:
+  //     "Expand your outdoor living space with a custom-designed deck built to last.",
+  //   fullDescription:
+  //     "Our deck construction services create beautiful, functional outdoor living spaces using premium materials and expert craftsmanship. From simple platforms to multi-level designs with built-in features, we build decks that enhance your lifestyle and property value.",
+  //   features: [
+  //     "Custom deck designs",
+  //     "Composite decking options",
+  //     "Cedar and pressure-treated wood",
+  //     "Built-in benches and planters",
+  //     "Deck lighting integration",
+  //     "Professional installation",
+  //   ],
+  // },
+  // {
+  //   id: "snow-removal",
+  //   name: "Snow Removal & Ice Management",
+  //   mainImageId: "snow-removal-main",
+  //   galleryTag: "snow-removal",
+  //   description:
+  //     "Keep your property safe and accessible with professional snow and ice management.",
+  //   fullDescription:
+  //     "Our winter services provide reliable snow removal and ice management for residential and commercial properties. We offer scheduled service and emergency response to ensure your driveways, parking areas, and walkways remain safe and accessible during winter weather.",
+  //   features: [
+  //     "Residential driveway clearing",
+  //     "Commercial parking lot plowing",
+  //     "Sidewalk snow removal",
+  //     "Ice prevention treatments",
+  //     "24/7 emergency response",
+  //     "Seasonal contracts available",
+  //   ],
+  // },
 ];
