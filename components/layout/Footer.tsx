@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <footer className='bg-white text-gray-700 py-12 px-4 md:px-8'>
-      <div className='container w-full max-w-7xl mx-auto'>
+      <div className='container w-full  md:max-w-7xl mx-auto'>
         <div className='flex flex-col md:flex-row'>
           {/* Logo and Contact Info */}
           <div className='flex flex-1 flex-col items-center md:items-start'>
@@ -44,7 +44,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className='text-nowrap flex flex-2 flex-col md:flex-ro items-center md:block '>
+          <div className='flex flex-2 flex-col md:flex-ro items-center md:block '>
             <div className='flex md:flex-row justify-between gap-10'>
               {/* Navigation Links */}
               <div className='flex-1'>

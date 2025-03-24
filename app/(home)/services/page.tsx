@@ -1,8 +1,8 @@
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 import ServiceCard from "@/components/home/ServiceCard";
 import { getCloudinaryImageData } from "@/lib/actions/actions";
+import Button from "@/components/ui/Button";
 
 export default async function LandscapingServicesPage() {
   const heroImage = await getCloudinaryImageData(
@@ -51,22 +51,20 @@ export default async function LandscapingServicesPage() {
       </div>
 
       {/* Call to Action */}
-      <div className='bg-gray-50 py-16'>
+      <div className='bg-[#FF8106]/95 py-16'>
         <div className='container mx-auto px-4'>
           <div className='bg-white rounded-xl p-8 border border-gray-200 shadow-lg max-w-4xl mx-auto text-center'>
-            <h3 className='custom-h3 mb-4'>
-              Ready to Transform Your Outdoor Space?
-            </h3>
+            <h3 className='mb-4'>Ready to Transform Your Outdoor Space?</h3>
             <p className='text-gray-600 mb-8 max-w-2xl mx-auto'>
               Contact us today for a free consultation and estimate on any of
               our professional landscaping services.
             </p>
-            <Link
-              href='/contact'
-              className='inline-block px-8 py-3 bg-[#FF8106] text-white font-medium rounded-lg hover:bg-orange-600 transition-colors'
-            >
-              Get a Free Quote
-            </Link>
+            <div className='flex justify-center'>
+              <Button
+                text='Get a Free Quote'
+                link='/contact'
+              />
+            </div>
           </div>
         </div>
       </div>
