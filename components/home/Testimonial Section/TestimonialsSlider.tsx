@@ -1,14 +1,14 @@
-'use client';
-import { testimonials } from '@/lib/data';
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper/modules';
-import TestimonialCard from './TestimonialCard';
-import SlideNextButton from '../ui/SlideNextButton';
-import SlidePrevButton from '../ui/SlidePrevButton';
+"use client";
+import { testimonials } from "@/lib/data";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
+import TestimonialCard from "./TestimonialCard";
+import SlideNextButton from "../../ui/SlideNextButton";
+import SlidePrevButton from "../../ui/SlidePrevButton";
 
 export default function TestimonialsSlider() {
   return (
@@ -25,8 +25,8 @@ export default function TestimonialsSlider() {
           dynamicBullets: true,
         }}
         navigation={{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         }}
         watchOverflow={true}
         resistance={true}

@@ -2,7 +2,7 @@ import AboutSection from "@/components/home/AboutSection";
 import ContactSection from "@/components/home/ContactSection";
 import HeroSection from "@/components/home/HeroSection";
 import ServicesSection from "@/components/home/ServicesSection";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
+import TestimonialsSection from "@/components/home/Testimonial Section/TestimonialsSection";
 import { getCloudinaryImageData } from "@/lib/actions/actions";
 
 // This will run at build time for static generation
