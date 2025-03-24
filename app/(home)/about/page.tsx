@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { getCloudinaryImageData } from "@/lib/actions/actions";
 import AboutTestimonials from "@/components/about/AboutTestimonials";
+import Button from "@/components/ui/Button";
+import { testimonials } from "@/lib/data";
 // import MeetTeamSeaction from "@/components/home/about/MeetTeamSeaction";
 // import WhyChooseUsSection from "@/components/home/about/WhyChooseUsSection";
 
@@ -172,24 +173,32 @@ export default async function AboutPage() {
       {/* <WhyChooseUsSection /> */}
 
       {/* Testimonials Section */}
-      <AboutTestimonials />
+      <h3 className='my-12 text-center'>What Our Clients Say</h3>
+      <div className='mb-16 grid grid-cols-1 lg:grid-cols-3 gap-8'>
+        {testimonials.slice(0, 3).map((testimonial) => (
+          <AboutTestimonials
+            key={testimonial.clientName}
+            {...testimonial}
+          />
+        ))}
+      </div>
 
-      {/* Call to Action */}
+      {/* Call to Action bg-[#FF8106]/95 */}
       <div className='bg-[#FF8106]/95 py-16'>
-        <div className='container mx-auto px-4 text-center'>
-          <h3 className='custom-h3 text-white mb-6'>
-            Ready to Transform Your Outdoor Space?
-          </h3>
-          <p className='text-green-100 max-w-2xl mx-auto mb-8'>
-            Contact us today to schedule a consultation with one of our
-            landscape design experts.
-          </p>
-          <Link
-            href='/contact'
-            className='inline-block px-8 py-3 bg-white text-[#FF8106] font-medium rounded-lg hover:bg-gray-100 transition-colors'
-          >
-            Get Started
-          </Link>
+        <div className='container mx-auto px-4'>
+          <div className='bg-white rounded-xl p-8 border border-gray-200 shadow-lg max-w-4xl mx-auto text-center'>
+            <h3 className='mb-4'>Ready to Transform Your Outdoor Space?</h3>
+            <p className='text-gray-600 mb-8 max-w-2xl mx-auto'>
+              Contact us today for a free consultation and estimate on any of
+              our professional landscaping services.
+            </p>
+            <div className='flex justify-center'>
+              <Button
+                text='Get a Free Quote'
+                link='/contact'
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
