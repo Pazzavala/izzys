@@ -15,7 +15,6 @@ export default function HeroSection() {
   const videoUrl = `https://res.cloudinary.com/${cloudName}/${resourceType}/upload/${transformations}/${publicId}.mp4`;
 
   return (
-    // min-h-[65vh] md:min-h-[70vh] xl:min-h-[80vh]
     <section className='w-full h-screen flex items-center justify-center py-16 px-4 bg-cover bg-center relative'>
       {/* <Image
         src={src}
