@@ -183,10 +183,10 @@ export const services: ServiceBase[] = [
     ],
   },
   {
-    id: "lighting-drainage",
+    id: "lighting",
     name: "Outdoor Lighting Solutions",
-    mainImageId: "lighting-drainage-main",
-    galleryTag: "lighting-drainage",
+    mainImageId: "lighting-main",
+    galleryTag: "lighting",
     description:
       "Illuminate and protect your property with professional lighting and drainage solutions.",
     fullDescription:
@@ -220,24 +220,24 @@ export const services: ServiceBase[] = [
       "Weather-resistant materials",
     ],
   },
-  {
-    id: "drainage-solutions",
-    name: "Yard Drainage Solutions",
-    mainImageId: "drainage-main",
-    galleryTag: "drainage",
-    description:
-      "Solve water problems with expert drainage solutions that protect your home and landscape.",
-    fullDescription:
-      "Our professional drainage systems prevent water damage to your home's foundation, eliminate standing water, and protect your landscape investments. We design and install French drains, catch basins, dry creek beds, and other solutions for effective water management.",
-    features: [
-      "French drain installation",
-      "Catch basin systems",
-      "Dry creek bed construction",
-      "Landscape grading",
-      "Downspout extensions",
-      "Erosion control measures",
-    ],
-  },
+  // {
+  //   id: "drainage-solutions",
+  //   name: "Yard Drainage Solutions",
+  //   mainImageId: "drainage-main",
+  //   galleryTag: "drainage",
+  //   description:
+  //     "Solve water problems with expert drainage solutions that protect your home and landscape.",
+  //   fullDescription:
+  //     "Our professional drainage systems prevent water damage to your home's foundation, eliminate standing water, and protect your landscape investments. We design and install French drains, catch basins, dry creek beds, and other solutions for effective water management.",
+  //   features: [
+  //     "French drain installation",
+  //     "Catch basin systems",
+  //     "Dry creek bed construction",
+  //     "Landscape grading",
+  //     "Downspout extensions",
+  //     "Erosion control measures",
+  //   ],
+  // },
   {
     id: "excavation-site-prep",
     name: "Excavation & Site Prep",

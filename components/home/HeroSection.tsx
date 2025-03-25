@@ -7,12 +7,11 @@ import Button from "../ui/Button";
 //   alt?: string;
 // }
 
-const cloudName = process.env.CLOUDINARY_CLOUD_NAME;
-
 export default function HeroSection() {
+  const cloudName = process.env.CLOUDINARY_CLOUD_NAME;
   const resourceType = "video";
   const transformations = "f_auto,q_auto,w_1800";
-  const publicId = "Hero-Video_mqayrs";
+  const publicId = "Hero-Video";
   const videoUrl = `https://res.cloudinary.com/${cloudName}/${resourceType}/upload/${transformations}/${publicId}.mp4`;
 
   return (

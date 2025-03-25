@@ -1,27 +1,20 @@
 import React from "react";
 import Image from "next/image";
 // import ContactForm from "@/components/ui/ContactForm";
-import { getCloudinaryImageData } from "@/lib/actions/actions";
 import HubSpotForm from "@/components/ui/HubspotForm";
 
-// This will run at build time for static generation
-async function getContactImage() {
-  return getCloudinaryImageData(
-    "contact-bg-image-public-id",
-    1800,
-    1200,
-    "contact-section"
-  );
-}
-
 export default async function ContactPage() {
-  const contactImage = await getContactImage();
+  const cloudName = process.env.CLOUDINARY_CLOUD_NAME;
+  const resourceType = "image";
+  const transformations = "c_fill,h_1200,w_1800";
+  const publicId = "contact-bg-image-public-id";
+  const bgImage = `https://res.cloudinary.com/${cloudName}/${resourceType}/upload/${transformations}/${publicId}.webp`;
 
   return (
     <section className='relative w-full h-screen flex items-center justify-center py-16 px-4 mt-16 lg:mt-24  bg-cover bg-center overflow-hidden'>
       <Image
-        src={contactImage.src}
-        alt={contactImage.alt ?? "contact page"}
+        src={bgImage}
+        alt={publicId ?? "contact page"}
         fill
         priority
         className='object-cover'

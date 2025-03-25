@@ -74,7 +74,7 @@ export const getImagesByTag = async (
 
       body: JSON.stringify({
         expression: `tags:${tag}`,
-        max_results: 10,
+        max_results: 30,
       }),
     });
 

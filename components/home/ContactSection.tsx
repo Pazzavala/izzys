@@ -12,14 +12,16 @@ interface ContactSectionProps {
   alt?: string;
 }
 
-export default function ContactSection({
-  src,
-  alt,
-}: Readonly<ContactSectionProps>) {
+export default function ContactSection({ alt }: Readonly<ContactSectionProps>) {
+  const cloudName = process.env.CLOUDINARY_CLOUD_NAME;
+  const resourceType = "image";
+  const transformations = "c_fill,h_1200,w_1800";
+  const publicId = "contact-bg-image-public-id";
+  const bgImage = `https://res.cloudinary.com/${cloudName}/${resourceType}/upload/${transformations}/${publicId}.webp`;
   return (
     <section className='w-full min-h-[65vh] md:min-h-[70vh] xl:min-h-[80vh] flex items-center justify-center py-16 px-4 bg-cover bg-center relative'>
       <Image
-        src={src}
+        src={bgImage}
         alt={alt ?? "contact section"}
         fill
         priority
