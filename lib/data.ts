@@ -167,7 +167,7 @@ export const services: ServiceBase[] = [
   },
   {
     id: "retaining-wall-installation",
-    name: "Retaining Walls and Boulder Walls",
+    name: "Retaining & Boulder Walls",
     mainImageId: "retaining-walls-main",
     galleryTag: "retaining-walls",
     description:

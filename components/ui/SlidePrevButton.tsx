@@ -11,7 +11,7 @@ export default function SlidePrevButton() {
       aria-label='Previous slide'
     >
       <IoIosArrowDropleftCircle
-        className='text-4xl text-gray-100 hover:text-gray-600 transition-colors'
+        className='text-4xl text-gray-400 hover:text-gray-600 transition-colors'
         aria-hidden
       />
     </button>

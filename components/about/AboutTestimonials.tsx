@@ -45,13 +45,13 @@ export default function AboutTestimonials({
 
   return (
     <>
-      <div
+      <button
         onClick={handleCardClick}
         className='container mx-auto px-4 lg:pb-16 cursor-pointer'
       >
         <div
           key={clientName}
-          className='bg-gray-50 p-8 rounded-xl'
+          className='relative bg-gray-50 p-8 rounded-xl'
         >
           <div className='flex items-center mb-4'>
             <svg
@@ -72,30 +72,18 @@ export default function AboutTestimonials({
             <p className='text-gray-500 text-sm'>{location}</p>
           </div>
           {hasFullReview && (
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                handleOpenModal();
-              }}
-              className='
-              absolute 
-              bottom-4 
-              right-4 
-              flex 
-              items-center 
-              gap-2 
-              text-sm 
-              text-gray-600 
-              hover:text-gray-800 
-              transition-colors
-            '
-            >
-              <FaEye />
+            <div className='absolute bottom-4 right-4 flex items-center gap-2 text-sm text-gray-600 hover:text-gray-800 transition-colors'>
+              <FaEye
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleOpenModal();
+                }}
+              />
               See Full Review
-            </button>
+            </div>
           )}
         </div>
-      </div>
+      </button>
       {isMounted && (
         <ReviewModal
           isOpen={isModalOpen}

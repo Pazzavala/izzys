@@ -1,6 +1,7 @@
 import AboutSection from "@/components/home/AboutSection";
 import ContactSection from "@/components/home/ContactSection";
 import HeroSection from "@/components/home/HeroSection";
+import ReviewEncouragementSection from "@/components/home/ReviewEncouragmentSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import TestimonialsSection from "@/components/home/Testimonial Section/TestimonialsSection";
 import { getCloudinaryImageData } from "@/lib/actions/actions";
@@ -31,6 +32,7 @@ export default async function RootPage() {
       <ServicesSection />
       <TestimonialsSection />
       <ContactSection {...contactImage} />
+      <ReviewEncouragementSection />
     </div>
   );
 }

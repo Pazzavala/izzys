@@ -135,7 +135,7 @@ export default async function ServicePage({ params }: Readonly<PageProps>) {
             <div className='sticky top-8'>
               <ServiceFeaturesCard features={service.features} />
 
-              <div className='bg-orange-50 rounded-xl p-8 border border-orange-100'>
+              {/* <div className='bg-orange-50 rounded-xl p-8 border border-orange-100'>
                 <p className='text-xl font-bold text-orange-800 mb-4'>
                   Need Help?
                 </p>
@@ -157,7 +157,7 @@ export default async function ServicePage({ params }: Readonly<PageProps>) {
                     View FAQ
                   </Link>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ export default function SlideNextButton() {
   return (
     <button
       onClick={() => swiper.slideNext()}
-      className='text-4xl text-gray-100 hover:text-gray-600 transition-colors z-10'
+      className='text-4xl text-gray-400 hover:text-gray-600 transition-colors z-10'
       aria-label='Next slide'
     >
       <IoIosArrowDroprightCircle aria-hidden />

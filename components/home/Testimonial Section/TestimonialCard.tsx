@@ -57,32 +57,9 @@ export default function TestimonialCard({
 
   return (
     <>
-      <div
+      <button
         onClick={handleCardClick}
-        className='
-          container 
-          flex flex-col 
-          justify-center 
-          items-center 
-          max-w-sm 
-          sm:max-w-lg 
-          md:max-w-xl 
-          lg:max-w-3xl 
-          xl:max-w-4xl 
-          w-full 
-          mx-auto 
-          p-12 
-          m-10 
-          bg-gray-100 
-          text-gray-700 
-          rounded-xl
-          transition-all 
-          duration-300 
-          ease-in-out
-          relative
-          cursor-pointer
-          hover:shadow-lg
-        '
+        className='relative flex flex-col m-10 text-gray-700 bg-white p-8 rounded-xl shadow-sm text-center max-w-4xl mx-auto'
       >
         <div className='flex items-center justify-center'>
           <p className='font-medium pb-10'>
@@ -95,31 +72,19 @@ export default function TestimonialCard({
         </p>
 
         {hasFullReview && (
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              handleOpenModal();
-            }}
-            className='
-              absolute 
-              bottom-4 
-              right-4 
-              flex 
-              items-center 
-              gap-2 
-              text-sm 
-              text-gray-600 
-              hover:text-gray-800 
-              transition-colors
-            '
-          >
-            <FaEye />
+          <div className='absolute bottom-4 right-4 flex items-center gap-2 text-sm text-gray-600 hover:text-gray-800 transition-colors'>
+            <FaEye
+              onClick={(e) => {
+                e.stopPropagation();
+                handleOpenModal();
+              }}
+            />
             See Full Review
-          </button>
+          </div>
         )}
 
         <div className='flex justify-center gap-2'>{renderStars(rating)}</div>
-      </div>
+      </button>
 
       {/* Modal via portal - only rendered on client side */}
       {isMounted && (
