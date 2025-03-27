@@ -1,7 +1,3 @@
-Here's the updated README for Izzy's Landscaping and Construction:
-
----
-
 # 📦 Izzy's Landscaping and Construction
 
 ## 🌟 Overview
