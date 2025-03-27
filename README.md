@@ -114,5 +114,5 @@ This is a personal project, but I'm open to suggestions and feedback. Feel free 
 
 ## 📞 Contact
 
-- Your Name - [mariap.zavala00@gmail.com](mailto:mariap.zavala00@gmail.com)
-- Project Link: [https://github.com/Pazzavala/izzys](https://github.com/Pazzavala/izzys)
+- Maria Zavala - [mariap.zavala00@gmail.com](mailto:mariap.zavala00@gmail.com)
+- Project Link - [https://github.com/Pazzavala/izzys](https://github.com/Pazzavala/izzys)
