@@ -220,24 +220,24 @@ export const services: ServiceBase[] = [
       "Weather-resistant materials",
     ],
   },
-  // {
-  //   id: "drainage-solutions",
-  //   name: "Yard Drainage Solutions",
-  //   mainImageId: "drainage-main",
-  //   galleryTag: "drainage",
-  //   description:
-  //     "Solve water problems with expert drainage solutions that protect your home and landscape.",
-  //   fullDescription:
-  //     "Our professional drainage systems prevent water damage to your home's foundation, eliminate standing water, and protect your landscape investments. We design and install French drains, catch basins, dry creek beds, and other solutions for effective water management.",
-  //   features: [
-  //     "French drain installation",
-  //     "Catch basin systems",
-  //     "Dry creek bed construction",
-  //     "Landscape grading",
-  //     "Downspout extensions",
-  //     "Erosion control measures",
-  //   ],
-  // },
+  {
+    id: "drainage-solutions",
+    name: "Yard Drainage Solutions",
+    mainImageId: "drainage-main",
+    galleryTag: "drainage",
+    description:
+      "Solve water problems with expert drainage solutions that protect your home and landscape.",
+    fullDescription:
+      "Professional drainage systems prevent water damage to your home's foundation and eliminate standing water while protecting your landscape investments. We design and install French drains, catch basins, and dry creek beds for effective water management. Proper drainage solutions are essential for protecting both property and health. Excess water accumulation can lead to foundation damage, basement flooding, soil erosion, and mold growth. Stagnant water creates breeding grounds for mosquitoes while consistently damp conditions damage landscaping and outdoor structures. Poor drainage can affect neighboring properties, potentially creating liability issues. Investing in effective drainage systems prevents these costly problems while preserving property value and ensuring a dry, healthy living environment.",
+    features: [
+      "French drain installation",
+      "Catch basin systems",
+      "Dry creek bed construction",
+      "Landscape grading",
+      "Downspout extensions",
+      "Erosion control measures",
+    ],
+  },
   {
     id: "excavation-site-prep",
     name: "Excavation & Site Prep",
