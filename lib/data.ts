@@ -254,23 +254,32 @@ export const services: ServiceBase[] = [
       "Professional equipment",
     ],
   },
-  // {
-  //   id: "snow-removal-services",
-  //   name: "Snow Removal & Ice Management",
-  //   mainImageId: "snow-removal-main",
-  //   galleryTag: "snow-removal",
-  //   description:
-  //     "Reliable residential and commercial snow removal to keep your property safe and accessible all winter.",
-  //   fullDescription:
-  //     "Our comprehensive snow removal services include plowing, shoveling, salting, and ice management for homes and businesses. We provide prompt, dependable service during winter storms to ensure your property remains accessible and hazard-free.",
-  //   features: [
-  //     // "24/7 emergency snow removal",
-  //     "Commercial parking lot plowing",
-  //     "Residential driveway clearing",
-  //     "Sidewalk and entryway shoveling",
-  //     "Ice management and salt application",
-  //   ],
-  // },
+  {
+    id: "snow-removal-services",
+    name: "Snow Removal",
+    mainImageId: "snow-removal-main",
+    galleryTag: "snow-removal",
+    description:
+      "Reliable residential and commercial snow removal to keep your property safe and accessible all winter.",
+    fullDescription:
+      "Our comprehensive snow removal services include plowing, shoveling, salting, and ice management for homes and businesses. We provide prompt, dependable service during winter storms to ensure your property remains accessible and hazard-free.",
+    features: [
+      // "24/7 emergency snow removal",
+      "Commercial parking lot plowing",
+      "Residential driveway clearing",
+      "Sidewalk and entryway shoveling",
+      "Ice management and salt application",
+    ],
+  },
+
+  // Photo by <a href="https://unsplash.com/@dan_scape?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Dan Cook</a> on <a href="https://unsplash.com/photos/vehicle-on-snow-covered-road-at-nighttime-Qdbzh5KJWTo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
+  // Photo by <a href="https://unsplash.com/@dan_scape?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Dan Cook</a> on <a href="https://unsplash.com/photos/vehicle-on-snow-covered-road-at-nighttime-Qdbzh5KJWTo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
+  // Photo by <a href="https://unsplash.com/@fr1d1?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Fridi Antrack</a> on <a href="https://unsplash.com/photos/a-train-traveling-through-a-snow-covered-forest-4rHTJJFI7tc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
+  // Photo by <a href="https://unsplash.com/@nathananderson?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Nathan Anderson</a> on <a href="https://unsplash.com/photos/aerial-photography-of-snow-capped-field-near-buildings-eSOVOj43s6g?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
   // {
   //   id: "stone-installations",
   //   name: "Stone Installations",
