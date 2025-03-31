@@ -2,8 +2,8 @@
 import React from "react";
 import Image from "next/image";
 import IzzyBanner from "@/public/assets/izzy_banner.jpg";
-import HubSpotForm from "../ui/HubspotForm";
-// import ContactForm from "../ui/ContactForm";
+// import HubSpotForm from "../ui/HubspotForm";
+import ContactForm from "../ui/ContactForm";
 
 interface ContactSectionProps {
   src: string;
@@ -38,8 +38,8 @@ export default function ContactSection({ alt }: Readonly<ContactSectionProps>) {
             Ready To Transform Your Outdoor Space?
           </h3>
 
-          <HubSpotForm />
-          {/* <ContactForm /> */}
+          {/* <HubSpotForm /> */}
+          <ContactForm />
         </div>
 
         {/* Image Section */}

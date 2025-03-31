@@ -17,7 +17,7 @@ export default async function handler(
     return res.status(405).json({ message: "Method not allowed" });
   }
 
-  const { firstName, lastName, email, phone, message } = req.body;
+  const { firstname, lastname, email, phone, message } = req.body;
 
   const portalId = process.env.HUBSPOT_PORTAL_ID;
   const formGuid = process.env.HUBSPOT_FORM_GUID;
@@ -28,11 +28,11 @@ export default async function handler(
     fields: [
       {
         name: "firstname",
-        value: firstName,
+        value: firstname,
       },
       {
         name: "lastname",
-        value: lastName,
+        value: lastname,
       },
       {
         name: "email",

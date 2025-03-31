@@ -2,40 +2,28 @@
 import React, { useState } from "react";
 import { contactAndSocials } from "@/lib/data";
 import Link from "next/link";
+import { useRecaptcha } from "@/hooks/useRecaptcha";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    firstname: "",
+    lastname: "",
     email: "",
     phone: "",
     message: "",
   });
 
-  // Function to format phone number
-  // const formatPhoneNumber = (value: string) => {
-  //   // Remove all non-numeric characters
-  //   const cleaned = value.replace(/\D/g, "");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
 
-  //   // Apply formatting based on the length of the cleaned input
-  //   if (cleaned.length <= 3) {
-  //     return `(${cleaned}`;
-  //   } else if (cleaned.length <= 6) {
-  //     return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3)}`;
-  //   } else if (cleaned.length <= 10) {
-  //     return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)} - ${cleaned.slice(
-  //       6
-  //     )}`;
-  //   } else {
-  //     // Limit to 10 digits
-  //     return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)} - ${cleaned.slice(
-  //       6,
-  //       10
-  //     )}`;
-  //   }
-  // };
+  const { token, loading, refresh } = useRecaptcha("contact_form");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -43,9 +31,39 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Submit the form data to HubSpot
+    if (!token) {
+      setSubmitStatus({
+        type: "error",
+        message: "reCAPTCHA not available. Please refresh the page.",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
     try {
-      const response = await fetch("/api/submit-to-hubspot", {
+      // First verify the captcha
+      const captchaResponse = await fetch("/api/verify-captcha", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ token }),
+      });
+
+      const captchaResult = await captchaResponse.json();
+
+      if (!captchaResult.success) {
+        setSubmitStatus({
+          type: "error",
+          message: "CAPTCHA verification failed. Please try again.",
+        });
+        return;
+      }
+
+      // If CAPTCHA verification succeeds, proceed with form submission
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -53,21 +71,36 @@ const ContactForm = () => {
         body: JSON.stringify(formData),
       });
 
+      const data = await response.json();
+
       if (response.ok) {
-        alert("Form submitted successfully!");
+        setSubmitStatus({
+          type: "success",
+          message: "Message sent successfully! We'll get back to you soon.",
+        });
         setFormData({
-          firstName: "",
-          lastName: "",
+          firstname: "",
+          lastname: "",
           email: "",
           phone: "",
           message: "",
-        }); // Reset form
+        });
+        // Get a fresh token for next submission
+        refresh();
       } else {
-        alert("Failed to submit form. Please try again.");
+        setSubmitStatus({
+          type: "error",
+          message: data.message || "Failed to send message. Please try again.",
+        });
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("An error occurred. Please try again.");
+      console.error("Unexpected error occured contactForm", error);
+      setSubmitStatus({
+        type: "error",
+        message: "An unexpected error occurred. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -77,9 +110,21 @@ const ContactForm = () => {
       className='flex flex-col gap-6 w-full max-w-md bg-white p-8 rounded-xl shadow-lg transform transition-all hover:shadow-xl text-gray-600 py-5'
     >
       <h5 className='text-center text-gray-700'>Contact Us</h5>
+
+      {submitStatus.type === "success" && (
+        <div className='p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg'>
+          {submitStatus.message}
+        </div>
+      )}
+
+      {submitStatus.type === "error" && (
+        <div className='p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg'>
+          {submitStatus.message}
+        </div>
+      )}
+
       <div className='flex gap-2'>
-        {/* First Name Input */}
-        <div className='relative'>
+        <div className='relative flex-1'>
           <label
             htmlFor='first-name-input'
             className='absolute left-3 -top-2 bg-white px-1 text-sm text-gray-500'
@@ -88,17 +133,15 @@ const ContactForm = () => {
           </label>
           <input
             type='text'
-            name='first-name'
+            name='firstname'
             id='first-name-input'
-            // placeholder='Your Name'
-            value={formData.firstName}
+            value={formData.firstname}
             onChange={handleChange}
             className='w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8106] focus:border-transparent transition-all'
             required
           />
         </div>
-        {/* Last Name Input */}
-        <div className='relative'>
+        <div className='relative flex-1'>
           <label
             htmlFor='last-name-input'
             className='absolute left-3 -top-2 bg-white px-1 text-sm text-gray-500'
@@ -107,10 +150,9 @@ const ContactForm = () => {
           </label>
           <input
             type='text'
-            name='last-name'
+            name='lastname'
             id='last-name-input'
-            // placeholder='Your Name'
-            value={formData.lastName}
+            value={formData.lastname}
             onChange={handleChange}
             className='w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8106] focus:border-transparent transition-all'
             required
@@ -118,7 +160,6 @@ const ContactForm = () => {
         </div>
       </div>
 
-      {/* Email Input */}
       <div className='relative'>
         <label
           htmlFor='email-input'
@@ -130,7 +171,6 @@ const ContactForm = () => {
           type='email'
           name='email'
           id='email-input'
-          // placeholder='Your Email'
           value={formData.email}
           onChange={handleChange}
           className='w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8106] focus:border-transparent transition-all'
@@ -149,7 +189,6 @@ const ContactForm = () => {
           type='tel'
           name='phone'
           id='phone-input'
-          // placeholder='Your Phone Number'
           value={formData.phone}
           onChange={handleChange}
           className='w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8106] focus:border-transparent transition-all'
@@ -157,7 +196,6 @@ const ContactForm = () => {
         />
       </div>
 
-      {/* Message Textarea
       <div className='relative'>
         <label
           htmlFor='message-input'
@@ -168,29 +206,26 @@ const ContactForm = () => {
         <textarea
           name='message'
           id='message-input'
-          // placeholder='Your Message'
           value={formData.message}
           onChange={handleChange}
           className='w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8106] focus:border-transparent resize-none transition-all'
           rows={5}
           required
         />
-      </div> */}
+      </div>
 
-      {/* Submit Button */}
       <button
         type='submit'
-        className='w-full bg-[#FF8106] hover:bg-[#FF9106] text-white font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-105 active:scale-95'
+        disabled={isSubmitting || loading || !token}
+        className={`w-full bg-[#FF8106] hover:bg-[#FF9106] text-white font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-105 active:scale-95 ${
+          isSubmitting || loading || !token
+            ? "opacity-70 cursor-not-allowed"
+            : ""
+        }`}
       >
-        Send Message
+        {isSubmitting || loading ? "Sending..." : "Send Message"}
       </button>
 
-      {/* <Button
-        link='submit'
-        text='Send Message'
-      /> */}
-
-      {/* Social Icons Section */}
       <div className='text-center mt-2'>
         <p className='text-gray-600 mb-7'>or directly at</p>
         <div className='flex justify-center gap-4'>

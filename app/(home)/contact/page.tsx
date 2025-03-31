@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-// import ContactForm from "@/components/ui/ContactForm";
-import HubSpotForm from "@/components/ui/HubspotForm";
+import ContactForm from "@/components/ui/ContactForm";
+// import HubSpotForm from "@/components/ui/HubspotForm";
 
 export default async function ContactPage() {
   const cloudName = process.env.CLOUDINARY_CLOUD_NAME;
@@ -25,8 +25,8 @@ export default async function ContactPage() {
       {/* Content Container */}
       <div className='relative container text-center mx-auto px-4 md:px-6 lg:px-8 flex flex-col gap-10 md:gap-20 z-10 items-center justify-center'>
         {/* Text and Form Section */}
-        {/* <ContactForm /> */}
-        <HubSpotForm />
+        <ContactForm />
+        {/* <HubSpotForm /> */}
       </div>
     </section>
   );
