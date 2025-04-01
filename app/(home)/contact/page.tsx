@@ -23,7 +23,7 @@ export default async function ContactPage() {
       <div className='absolute inset-0 bg-black/60 backdrop-blur-xs' />
 
       {/* Content Container */}
-      <div className='relative container text-center mx-auto px-4 md:px-6 lg:px-8 flex flex-col gap-10 md:gap-20 z-10 items-center justify-center'>
+      <div className='relative container text-center mx-auto px-4 md:px-6 lg:px-8 flex flex-col gap-10 md:gap-20 items-center justify-center'>
         {/* Text and Form Section */}
         <ContactForm />
         {/* <HubSpotForm /> */}
