@@ -50,8 +50,8 @@ export async function POST(request: Request) {
             pageUri:
               body.pageUri || "https://www.izzyslandscapingmn.com/contact",
             pageName: body.pageUri?.includes("/contact")
-              ? "Contact Page"
-              : "Website Form Submission",
+              ? "Contact Page Form Submission"
+              : "Home Page Form Submission",
           },
         }),
       }
