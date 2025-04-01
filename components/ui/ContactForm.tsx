@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { contactAndSocials } from "@/lib/data";
 import Link from "next/link";
 import { useRecaptcha } from "@/hooks/useRecaptcha";
+import { usePathname } from "next/navigation";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -18,7 +19,7 @@ const ContactForm = () => {
     type: "success" | "error" | null;
     message: string;
   }>({ type: null, message: "" });
-
+  const pathname = usePathname(); // Get current route path
   const { token, loading, refresh } = useRecaptcha("contact_form");
 
   const handleChange = (
@@ -68,7 +69,10 @@ const ContactForm = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData, // Include all form fields
+          pageUri: `https://www.izzyslandscapingmn.com${pathname}`, // Add dynamic URL
+        }),
       });
 
       const data = await response.json();
